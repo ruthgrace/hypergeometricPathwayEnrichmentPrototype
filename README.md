@@ -7,13 +7,9 @@ The hypergeometricWithWikiPathways method generates genesets from WikiPathways .
 
 The .gpml files can be opened in Cytoscape with a plugin (http://apps.cytoscape.org/apps/gpmlplugin) and unfortunately only works with Cytoscape 2.7 and 2.8.
 
-Here is the Cytoscape visualization of a .gpml file before running the hypergeometric test.
+![Here is the Cytoscape visualization of a .gpml file before running the hypergeometric test.](https://github.com/ruthgrace/hypergeometricPathwayEnrichmentPrototype/blob/master/readmefiles/before.png)
 
-![alt tag](https://github.com/ruthgrace/hypergeometricPathwayEnrichmentPrototype/blob/master/readmefiles/before.png)
-
-Here is the Cytoscape visualization of the same .gpml file output after running the hypergeometric test.
-
-![alt tag](https://github.com/ruthgrace/hypergeometricPathwayEnrichmentPrototype/blob/master/readmefiles/after.png)
+![Here is the Cytoscape visualization of the same .gpml file output after running the hypergeometric test.](https://github.com/ruthgrace/hypergeometricPathwayEnrichmentPrototype/blob/master/readmefiles/after.png)
 
 The program can be run using GeneSets without WikiPathways by specifying the GENESETFILE variable and by using the hypergeometricWithGeneSets method instead of the hypergeometricWithWikiPathways method.
 
