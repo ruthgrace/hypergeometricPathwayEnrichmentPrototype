@@ -1,2 +1,3 @@
 /pathwayprototype/output/gpml_files/*
 /pathwayprototype/output/*.txt
+/pathwayprototype/src/resources/genesets/wikipathways.gmt
