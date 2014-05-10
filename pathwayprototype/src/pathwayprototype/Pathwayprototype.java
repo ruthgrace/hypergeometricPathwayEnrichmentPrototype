@@ -56,28 +56,28 @@ public class Pathwayprototype {
     }
     public static void main(String[] args) {
         String WIKIPATHWAYSFOLDER = "src/resources/wikipathways/";
-        
+        String VCFFILE = "src/resources/annotatedVCF/WGS-001-03.gatk.snp.indel.jv.vcf";
         Pathwayprototype pathwayobject = new Pathwayprototype();
         
         //run with wikipathways
-        pathwayobject.hypergeometricWithWikiPathways(WIKIPATHWAYSFOLDER);
+        pathwayobject.hypergeometricWithWikiPathways(VCFFILE,WIKIPATHWAYSFOLDER);
         
         //run with GeneSets
-        //pathwayobject.hypergeometricWithGeneSets();
+        //pathwayobject.hypergeometricWithGeneSets(TESTFILE1,);
         
     }
-    public void hypergeometricWithGeneSets() {
+    public void hypergeometricWithGeneSets(String VcfFile) {
         
         this.readGeneSet(GENESETFILE);
-        this.readVCF(TESTFILE1, GENE_REGEX, EFFECT_REGEX, GENES_NOT_IN_GENESETS_FILE);
+        this.readVCF(VcfFile, GENE_REGEX, EFFECT_REGEX, GENES_NOT_IN_GENESETS_FILE);
         this.hypergeometricTest();
         this.outputEnrichedGeneList(OUTPUTFILE);
         System.out.println("Sample size: "+this.geneset.size()+", Population size: "+this.allgenes.size());
     }
-    public void hypergeometricWithWikiPathways(String pathwayfolder) {
+    public void hypergeometricWithWikiPathways(String VcfFile, String pathwayfolder) {
         wikipathways2GMT(pathwayfolder, WIKIPATHWAYSGMTFILE);
         this.readWikiPathwayGeneSet(WIKIPATHWAYSGMTFILE);
-        this.readVCF(TESTFILE1, GENE_REGEX, EFFECT_REGEX, GENES_NOT_IN_GENESETS_FILE);
+        this.readVCF(VcfFile, GENE_REGEX, EFFECT_REGEX, GENES_NOT_IN_GENESETS_FILE);
         this.hypergeometricWikiPathwaysTest(pathwayfolder);
         this.outputEnrichedGeneList(OUTPUTFILE);
         System.out.println("Sample size: "+this.geneset.size()+", Population size: "+this.allgenes.size());
