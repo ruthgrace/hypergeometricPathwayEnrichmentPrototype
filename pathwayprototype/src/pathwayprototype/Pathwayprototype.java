@@ -42,7 +42,6 @@ public class Pathwayprototype {
     final String TESTFILE2 = "src/resources/annotatedVCF/WGS-002-03.gatk.snp.indel.jv.vcf";
     final String TESTFILE3 = "src/resources/annotatedVCF/WGS-003-03.gatk.snp.indel.jv.vcf";
     final String GENESETFOLDER = "src/resources/genesets/";
-    final String GENESETFILE = "src/resources/genesets/wikipathways.gmt"; //allow user to improt their own, or use GeneSets instead of wikipathways
     final String OUTPUTFILE = "output/enriched_pathways_and_Pvalues.txt";
     final String PATHWAYOUTPUTFOLDER = "output/gpml_files/";
     final String WIKIPATHWAYSGMTFILE = "wikipathways.gmt";
@@ -57,16 +56,18 @@ public class Pathwayprototype {
     public static void main(String[] args) {
         String WIKIPATHWAYSFOLDER = "src/resources/wikipathways/";
         String VCFFILE = "src/resources/annotatedVCF/WGS-001-03.gatk.snp.indel.jv.vcf";
+        String GENESETFILE = "src/resources/genesets/wikipathways.gmt";
         Pathwayprototype pathwayobject = new Pathwayprototype();
         
         //run with wikipathways
         pathwayobject.hypergeometricWithWikiPathways(VCFFILE,WIKIPATHWAYSFOLDER);
         
         //run with GeneSets
-        //pathwayobject.hypergeometricWithGeneSets(TESTFILE1,);
+        //String GENESETFILE = "src/resources/genesets/Human_GO_AllPathways_no_GO_iea_symbol.gmt";
+        //pathwayobject.hypergeometricWithGeneSets(GENESETFILE, VCFFILE);
         
     }
-    public void hypergeometricWithGeneSets(String VcfFile) {
+    public void hypergeometricWithGeneSets(String GENESETFILE, String VcfFile) {
         
         this.readGeneSet(GENESETFILE);
         this.readVCF(VcfFile, GENE_REGEX, EFFECT_REGEX, GENES_NOT_IN_GENESETS_FILE);
