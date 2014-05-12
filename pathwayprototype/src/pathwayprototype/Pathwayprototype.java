@@ -239,7 +239,7 @@ public class Pathwayprototype {
                     //store p-value from hypergeometric test
                     //if p is less than some threshhold
                     //color all genes involved in the pathway
-                    testedpathways.add(new TestedPathway(p, pathwayname));
+                    testedpathways.add(new TestedPathway(p, pathwayname,commonGenes));
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -273,7 +273,7 @@ public class Pathwayprototype {
                     h = new Hypergeometric(samplesize, populationsize, markeditems);
                     p = h.cdf((double) commonGenes.size());
                     this.markPathwayGenesInGPML(WIKIPATHWAYSFOLDER, commonGenes, pathwayname, PATHWAYOUTPUTFOLDER, PVALUE_CUTOFF);
-                    testedpathways.add(new TestedPathway(p, pathwayname));
+                    testedpathways.add(new TestedPathway(p, pathwayname,commonGenes));
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -290,12 +290,20 @@ public class Pathwayprototype {
         System.out.println("Writing pathways and p-values to "+filename);
         try {
             PrintWriter writer = new PrintWriter(filename, "UTF-8");
-            writer.println("Gene symbol" + "\t" + "P-value");
+            writer.println("Gene symbol\tP-value\tGenes");
             TestedPathway t;
+            HashSet<String> pathwayGenes;
+            Iterator it;
             int size = testedpathways.size();
             for (int i = 0; i < size; i++) {
                 t = testedpathways.get(i);
-                writer.println(t.getName() + "\t" + t.getP());
+                writer.print(t.getName() + "\t" + t.getP());
+                pathwayGenes=t.getGenes();
+                it = pathwayGenes.iterator();
+                while (it.hasNext()) {
+                    writer.print("\t"+it.next());
+                }
+                writer.println();
             }
             writer.close();
         }
@@ -332,7 +340,7 @@ public class Pathwayprototype {
                 xpathexpression = "/Pathway/Comment[@Source='WikiPathways-description']";
                 nodes = (NodeList) xpath.evaluate(xpathexpression,doc,XPathConstants.NODESET);
                 if (nodes.getLength() >0){
-                    writer.print("|"+nodes.item(0).getNodeValue());
+                    writer.print("|"+nodes.item(0).getTextContent().replaceAll("\\n"," "));
                 }
                 
                 xpathexpression = "/Pathway/DataNode[@Type='GeneProduct']";
@@ -356,73 +364,6 @@ public class Pathwayprototype {
             e.printStackTrace();
         }
     }
-    /*public void wikipathways2GMT(String pathwayfolder, String OUTFILE) {
-        Pattern p,p2; Matcher m,m2;
-        String PATHWAYNAMEREGEX = "^<Pathway[^\"]*\"[^\"]*\"[ ]*Name[^\"]*\"([^\"]*)\".*$";
-        String PATHWAYDESCRIPTIONREGEX = "^.*Comment Source[ ]*=[ ]*\"WikiPathways-description\">([^<]*).*$";
-        String GENESYMBOLREGEX = "^.*DataNode[ ]*TextLabel[ ]*=[ ]*\"([^\"]*)\".*Type[ ]*=[ ]*\"GeneProduct\".*$";
-        String DATANODE = "DataNode";
-        BufferedReader br;
-        String line;
-        int counter = 0;
-        final File folder = new File(pathwayfolder);
-        try {
-                PrintWriter writer = new PrintWriter(GENESETFOLDER+OUTFILE, "UTF-8");
-
-                for (final File fileEntry : folder.listFiles()) {
-                        br = new BufferedReader(new FileReader(pathwayfolder+fileEntry.getName()));
-                        line = br.readLine();
-                        if (line != null) {
-
-                                line = line.trim();
-                                p = Pattern.compile(PATHWAYNAMEREGEX);
-                                m = p.matcher(line);
-                                while (!m.find() && line != null) {
-                                        line = br.readLine();
-                                        m = p.matcher(line);
-                                }
-
-                                //counter ensures uniqueness
-                                writer.print(fileEntry.getName() + "\t" + m.group(1)+"_"+counter);
-                                counter++;
-                                p = Pattern.compile(PATHWAYDESCRIPTIONREGEX);
-                                m = p.matcher(line);
-                                p2 = Pattern.compile(DATANODE);
-                                m2 = p2.matcher(line);
-                                while (!m.find() && line!=null) {
-                                        if (m2.find()) {
-                                                break;
-                                        }
-                                        line = br.readLine();
-                                        m = p.matcher(line);
-                                        m2 = p2.matcher(line);
-                                }
-
-                                if (!m2.find(0)){
-                                        writer.print("\t"+m.group(1));
-                                }
-                                else {
-                                        writer.print("\tNo description.");
-                                }
-                                p = Pattern.compile(GENESYMBOLREGEX);
-                                while (line!=null) {
-                                        m = p.matcher(line);
-
-                                        if (m.find()) {
-                                                writer.print("\t"+m.group(1));
-                                        }
-                                        line = br.readLine();
-                                }
-                                writer.println();
-                        }
-
-                }
-                writer.close();
-        }
-        catch (Exception e) {
-                System.out.println(e.getMessage());
-        }
-    }*/
     public void markPathwayGenesInGPML (String WIKIPATHWAYSFOLDER, HashSet<String> commonGenes, String pathwayName, String GPMLOUTPUTFOLDER, double PVALUE_CUTOFF) {
         Collections.sort(testedpathways, new PathwayEnrichmentProbabilityComparator());
         int i = 0;
