@@ -46,6 +46,8 @@ public class Pathwayprototype {
     final String PATHWAYOUTPUTFOLDER = "output/gpml_files/";
     final String WIKIPATHWAYSGMTFILE = "wikipathways.gmt";
     final String GENES_NOT_IN_GENESETS_FILE = "output/genes_not_in_genesets.txt";
+    final String OUTPUTDIR = "output/";
+    final String PATHWAYSOUTPUTDIR = "output/gpml_files/";
     final double PVALUE_CUTOFF = 0.0000001; // you cou  ld turn this into something related to the number of pathways
     /**
      * @param args the command line arguments
@@ -68,7 +70,14 @@ public class Pathwayprototype {
         
     }
     public void hypergeometricWithGeneSets(String GENESETFILE, String VcfFile) {
-        
+        File outputdir = new File(OUTPUTDIR);
+        if (!outputdir.exists()) {
+            outputdir.mkdir();
+        }
+        File gpmloutputdir = new File(PATHWAYSOUTPUTDIR);
+        if (!gpmloutputdir.exists()) {
+            gpmloutputdir.mkdir();
+        }
         this.readGeneSet(GENESETFILE);
         this.readVCF(VcfFile, GENE_REGEX, EFFECT_REGEX, GENES_NOT_IN_GENESETS_FILE);
         this.hypergeometricTest();
@@ -76,6 +85,15 @@ public class Pathwayprototype {
         System.out.println("Sample size: "+this.geneset.size()+", Population size: "+this.allgenes.size());
     }
     public void hypergeometricWithWikiPathways(String VcfFile, String pathwayfolder) {
+        File outputdir = new File(OUTPUTDIR);
+        if (!outputdir.exists()) {
+            outputdir.mkdir();
+        }
+        
+        File gpmloutputdir = new File(PATHWAYSOUTPUTDIR);
+        if (!gpmloutputdir.exists()) {
+            gpmloutputdir.mkdir();
+        }
         wikipathways2GMT(pathwayfolder, WIKIPATHWAYSGMTFILE);
         this.readWikiPathwayGeneSet(WIKIPATHWAYSGMTFILE);
         this.readVCF(VcfFile, GENE_REGEX, EFFECT_REGEX, GENES_NOT_IN_GENESETS_FILE);
