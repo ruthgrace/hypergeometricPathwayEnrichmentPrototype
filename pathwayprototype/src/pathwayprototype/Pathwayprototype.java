@@ -36,7 +36,7 @@ public class Pathwayprototype {
     private Set<String> allgenes;
     private Set<String> effectset;
     private HashMap genesets;
-    private ArrayList<String> positionMap;
+    private HashMap<String,String> positionMap;
     final String GENE_REGEX="HGVS=([^:^(]*)";
     final String EFFECT_REGEX = "EFFECT=([^;]*)";
     final String TESTFILE1 = "src/resources/annotatedVCF/WGS-001-03.gatk.snp.indel.jv.vcf";
@@ -55,7 +55,7 @@ public class Pathwayprototype {
      * @param args the command line arguments
      */
     public Pathwayprototype() {
-        positionMap = new ArrayList<String>();
+        positionMap = new HashMap<String,String>();
     }
     public static void main(String[] args) {
         String WIKIPATHWAYSFOLDER = "src/resources/wikipathways/";
@@ -220,14 +220,14 @@ public class Pathwayprototype {
             String[] pathwayDescriptions = new String[folder.listFiles().length];
             int counter = 0;
             HashMap<String,String> nonGeneProductNodes;
-            HashSet<String> geneProductNodes;
+            HashMap<String,String> geneProductNodes;
             
             for (final File fileEntry : folder.listFiles()) {
                 System.out.println(fileEntry.getName());
                 doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(PATHWAYFOLDER+fileEntry.getName()));
                 xpath = XPathFactory.newInstance().newXPath();
                 nonGeneProductNodes = new HashMap<String,String>();
-                geneProductNodes = new HashSet<String>();
+                geneProductNodes = new HashMap<String,String>();
                 xpathexpression = "/Pathway";
                 nodes = (NodeList) xpath.evaluate(xpathexpression,doc,XPathConstants.NODESET);
                 
@@ -333,13 +333,13 @@ public class Pathwayprototype {
     private void writeJS(String pathwayName, String pathwayDescription, String folder, String fileName, String[] javascriptNodes, String[] javascriptEdges, HashMap<String,String> nonGeneProductNodes) {
         try {
             String jsfilebeginning = "$('#cy').cytoscape({\n  layout: {\n  name: 'preset',\n  positions: {";
-            String jsfilestyle = "}\n},\nstyle: cytoscape.stylesheet()\n    .selector('node')\n      .css({\n        'content': 'data(name)',\n        'shape': 'rectangle',\n        'text-valign': 'center',\n        'background-color': 'white',\n        'background-opacity': 1,\n        'color': 'black',\n        'font-size': 10,\n        'text-outline-width': 0,\n        'border-width': 2,\n        'border-color': 'black',\n        'border-opacity': 1,\n        'text-outline-color': '#888',\n        'z-index': 2\n      })\n      .selector('$node > node')\n      .css({\n        'padding-top': '4px',\n        'padding-left': '4px',\n        'padding-bottom': '4px',\n        'padding-right': '4px',\n        'z-index': 0\n      })\n      .selector('node[isInhibitor]')\n      .css({\n        'color': 'red',\n        'border-color': 'red'\n      })\n      .selector('node[isMetabolite]')\n      .css({\n        'color': 'blue',\n        'border-color': 'blue'\n      })\n      .selector('node[placementNode]')\n      .css({\n        'width': 1,\n        'height': 1,\n        'background-opacity': 1,\n        'background-color': 'black',\n        'border-opacity': 0\n      })\n      .selector('node[width]')\n      .css({\n        'width': 'data(width)',\n        'height': 'data(height)',\n      })\n      .selector('node[shape]')\n      .css({\n        'background-opacity': 0,\n        'background-color': 'white',\n        'shape': 'data(shape)',\n        'z-index': 0\n      })\n      .selector('node > $node')\n      .css({\n        'z-index': 0\n      })\n      .selector('node[isLabel]')\n      .css({\n      	'background-opacity': 0,\n      	'border-opacity': 0,\n        'z-index': 1\n      })\n      .selector('node[color]')\n      .css({\n        'border-width': 4,\n        'border-color': 'green'\n      })\n      .selector('edge')\n      .css({\n        'target-arrow-shape': 'triangle',\n        'z-index': 3,\n        'width': 2,\n        'line-color': 'black',\n        'target-arrow-color': 'black'\n      })\n    .selector('edge[noArrowHead]')\n      .css({\n        'target-arrow-shape': 'none'\n      })\n    .selector('edge[teeArrowHead]')\n      .css({\n        'target-arrow-shape': 'tee',\n        'line-color': 'red',\n        'target-arrow-color': 'red'\n      })\n    .selector('edge[veeArrowHead]')\n      .css({\n        'target-arrow-shape': 'vee'\n      })\n    .selector('edge[circularArrowHead]')\n      .css({\n        'target-arrow-shape': 'circle',\n        'target-arrow-fill': 'hollow'\n      })\n    .selector(':selected')\n      .css({\n        'background-color': 'black',\n        'line-color': 'black',\n        'target-arrow-color': 'black',\n        'source-arrow-color': 'black'\n      })\n    .selector('.faded')\n      .css({\n        'background-opacity': 0.25,\n        'text-opacity': 0\n      })\n    .selector('node#supergrandparent')\n      .css({\n        'background-opacity': 0,\n        'border-opacity': 0,\n        'border-color': 'white',\n        'z-index': -1\n      })\n    .selector('node#superparent')\n      .css({\n        'background-opacity': 0,\n        'border-opacity': 0,\n        'border-color': 'white',\n        'z-index': -1\n      }),\nelements: {\n    nodes: [\n    { data: { id: 'supergrandparent' } },\n    { data: { id: 'superparent', parent: 'supergrandparent'} },";
+            String jsfilestyle = "}\n},\nstyle: cytoscape.stylesheet()\n    .selector('node')\n      .css({\n        'content': 'data(name)',\n        'shape': 'rectangle',\n        'text-valign': 'center',\n        'background-color': 'white',\n        'background-opacity': 1,\n        'color': 'black',\n        'font-size': 10,\n        'text-outline-width': 0,\n        'border-width': 2,\n        'border-color': 'black',\n        'border-opacity': 1,\n        'text-outline-color': '#888',\n        'z-index': 2\n      })\n      .selector('$node > node')\n      .css({\n        'padding-top': '4px',\n        'padding-left': '4px',\n        'padding-bottom': '4px',\n        'padding-right': '4px',\n        'z-index': 0\n      })\n      .selector('node[isInhibitor]')\n      .css({\n        'color': 'red',\n        'border-color': 'red'\n      })\n      .selector('node[isMetabolite]')\n      .css({\n        'color': 'blue',\n        'border-color': 'blue'\n      })\n      .selector('node[placementNode]')\n      .css({\n        'width': 1,\n        'height': 1,\n        'background-opacity': 1,\n        'background-color': 'black',\n        'border-opacity': 0\n      })\n      .selector('node[width]')\n      .css({\n        'width': 'data(width)',\n        'height': 'data(height)',\n      })\n      .selector('node[shape]')\n      .css({\n        'background-opacity': 0,\n        'background-color': 'white',\n        'shape': 'data(shape)',\n        'z-index': 0\n      })\n      .selector('node > $node')\n      .css({\n        'z-index': 0\n      })\n      .selector('node[isLabel]')\n      .css({\n      	'background-opacity': 0,\n      	'border-opacity': 0,\n        'z-index': 1\n      })\n      .selector('node[color]')\n      .css({\n        'border-color': 'data(color)'\n      })\n      .selector('node[isMutated]')\n      .css({\n        'border-width': 4,\n        'border-color': 'green'\n      })\n      .selector('edge')\n      .css({\n        'target-arrow-shape': 'triangle',\n        'z-index': 3,\n        'width': 2,\n        'line-color': 'black',\n        'target-arrow-color': 'black'\n      })\n    .selector('edge[noArrowHead]')\n      .css({\n        'target-arrow-shape': 'none'\n      })\n    .selector('edge[teeArrowHead]')\n      .css({\n        'target-arrow-shape': 'tee',\n        'line-color': 'red',\n        'target-arrow-color': 'red'\n      })\n    .selector('edge[veeArrowHead]')\n      .css({\n        'target-arrow-shape': 'vee'\n      })\n    .selector('edge[color]')\n      .css({\n        'line-color': 'data(color)'\n      })\n    .selector('edge[circularArrowHead]')\n      .css({\n        'target-arrow-shape': 'circle',\n        'target-arrow-fill': 'hollow'\n      })\n    .selector(':selected')\n      .css({\n        'background-color': 'black',\n        'line-color': 'black',\n        'target-arrow-color': 'black',\n        'source-arrow-color': 'black'\n      })\n    .selector('.faded')\n      .css({\n        'background-opacity': 0.25,\n        'text-opacity': 0\n      })\n    .selector('node#supergrandparent')\n      .css({\n        'background-opacity': 0,\n        'border-opacity': 0,\n        'border-color': 'white',\n        'z-index': -1\n      })\n    .selector('node#superparent')\n      .css({\n        'background-opacity': 0,\n        'border-opacity': 0,\n        'border-color': 'white',\n        'z-index': -1\n      }),\nelements: {\n    nodes: [\n    { data: { id: 'supergrandparent' } },\n    { data: { id: 'superparent', parent: 'supergrandparent'} },";
             String jsfilemiddle = "    ],\n    edges: [";
             String jsfileend = "    ]\n  },\n  \n  ready: function(){\n    window.cy = this;\n    \n    // giddy up...\n    \n    cy.elements().unselectify();\n    \n    cy.on('tap', 'node', function(e){\n      var node = e.cyTarget; \n      var neighborhood = node.neighborhood().add(node);\n      \n      cy.elements().addClass('faded');\n      neighborhood.removeClass('faded');\n    });\n    \n    cy.on('tap', function(e){\n      if( e.cyTarget === cy ){\n        cy.elements().removeClass('faded');\n      }\n    });\n  }\n});";
             PrintWriter writer = new PrintWriter(folder+fileName, "UTF-8");
             writer.println(jsfilebeginning);
             //print node position map
-            Iterator positions = positionMap.iterator();
+            Iterator positions = positionMap.values().iterator();
             if (positions.hasNext()) {
                 writer.println(positions.next());
             }
@@ -349,7 +349,9 @@ public class Pathwayprototype {
             writer.println(jsfilestyle);
             writer.print(javascriptNodes[0]);
             for (int i = 1; i < javascriptNodes.length; i++) {
-                writer.print(",\n"+javascriptNodes[i]);
+                if (!javascriptNodes[i].equals("")) {
+                    writer.print(",\n"+javascriptNodes[i]);
+                }
             }
             
             Iterator<String> it = nonGeneProductNodes.values().iterator();
@@ -416,14 +418,14 @@ public class Pathwayprototype {
             e.printStackTrace();
         }
     }
-    private String processNode(Node node, HashMap<String,String> nonGeneProductNodes, HashSet<String> geneProducts, ArrayList<String> positionMap) {
+    private String processNode(Node node, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, HashMap<String,String> positionMap) {
         String nodeTextStart = "      { data: { id: '";
         String nodeTextName = ", name: '";
         String singleQuote = "'";
         String colon = ":";
         String space = " ";
         String nodeTextPlacementNode = ", placementNode: true";
-        String nodeTextColor = ", color: true";
+        String isMutatedText = ", isMutated: true";
         String nodeTextWeight = ", weight: ";
         String nodeTextHeight = ", height: ";
         String nodeTextEnd = "} }";
@@ -440,7 +442,9 @@ public class Pathwayprototype {
         String inhibitorAttribute = ", isInhibitor: true";
         String metaboliteAttribute = ", isMetabolite: true";
         String parentAttribute = ", parent: '";
-        boolean addToNonGeneProductNodes = false;
+        String elbowText=", elbow: true";
+        String anchorText = ", anchor: true";
+        boolean addToNonGeneProductNodes = false, addToGeneProductNodes = false;
         
         
         //if shape is double lined, call processNode twice
@@ -486,14 +490,9 @@ public class Pathwayprototype {
         if (attributes!=null && attributes.getLength() > 0 && attributes.getNamedItem("GraphId")!=null) {
             
             nodeText+=nodeTextStart;
-            graphID = getGraphRefID(node, nonGeneProductNodes, geneProducts, positionMap).trim();
-            if (attributes.getNamedItem("Type")==null || !attributes.getNamedItem("Type").getNodeValue().equals("GeneProduct")) {
-                addToNonGeneProductNodes = true; 
-            }
-            else {
-                geneProducts.add(graphID);
-            }
             
+            
+            graphID = getGraphRefID(node, nonGeneProductNodes, geneProducts, positionMap).trim();
             nodeText+=graphID+singleQuote;
             String nullString = "null";
             if (attributes.getNamedItem("parentID")==null) {
@@ -512,9 +511,26 @@ public class Pathwayprototype {
             }
             nodeText+= singleQuote;
             if (this.geneset.contains(geneSymbol)) {
-                nodeText+=nodeTextColor;
+                nodeText+=isMutatedText;
             }
             
+            if (attributes.getNamedItem("Type")==null || !attributes.getNamedItem("Type").getNodeValue().equals("GeneProduct")) {
+                addToNonGeneProductNodes = true;
+            }
+            else if (attributes.getNamedItem("Type").getNodeValue().equals("GeneProduct")) {
+                addToGeneProductNodes = true;
+            }
+            
+            if (attributes.getNamedItem("isPlacementNode")!=null) {
+                nodeText+=nodeTextPlacementNode;
+            }
+            
+            if (attributes.getNamedItem("Elbow")!=null) {
+                nodeText+=elbowText;
+            }
+            if (attributes.getNamedItem("Anchor")!=null) {
+                nodeText+=anchorText;
+            }
             
             if (node.getAttributes().getNamedItem("Type")!=null) {
                 if (node.getAttributes().getNamedItem("TextLabel")!=null && node.getAttributes().getNamedItem("TextLabel").getNodeValue().toLowerCase().contains("inhibitor")) {
@@ -531,42 +547,40 @@ public class Pathwayprototype {
                 graphics = graphics.getNextSibling();
             }
             
-            if (graphics == null ) {
-                nodeText+=nodeTextEnd;
-                return nodeText;
-            }
-            attributes = graphics.getAttributes();
-            
-            
-            if (node.getNodeName().equals("Label")) {
-                nodeText+=labelAttribute;
-            }
-            else if (node.getNodeName().equals("Shape")) {
-                nodeText+=shapeAttribute;
-                if (attributes.getNamedItem("ShapeType")!=null) {
-                    String shapetype = attributes.getNamedItem("ShapeType").getNodeValue();
-                    if (shapetype.equals("RoundedRectangle")) {
-                        nodeText+="'roundrectangle'";
-                    }
-                    else if (shapetype.equals("Oval")) {
-                        nodeText+="'ellipse'";
+            if (graphics!= null ) {
+                
+                attributes = graphics.getAttributes();
+
+
+                if (node.getNodeName().equals("Label")) {
+                    nodeText+=labelAttribute;
+                }
+                else if (node.getNodeName().equals("Shape")) {
+                    nodeText+=shapeAttribute;
+                    if (attributes.getNamedItem("ShapeType")!=null) {
+                        String shapetype = attributes.getNamedItem("ShapeType").getNodeValue();
+                        if (shapetype.equals("RoundedRectangle")) {
+                            nodeText+="'roundrectangle'";
+                        }
+                        else if (shapetype.equals("Oval")) {
+                            nodeText+="'ellipse'";
+                        }
+                        else {
+                            nodeText+="'"+shapetype.toLowerCase().trim()+"'";
+                        }
                     }
                     else {
-                        nodeText+="'"+shapetype.toLowerCase().trim()+"'";
+                        nodeText+="'rectangle'";
                     }
                 }
-                else {
-                    nodeText+="'rectangle'";
+
+                //width/height
+                if (attributes.getNamedItem("Width")!=null && attributes.getNamedItem("Height")!=null) {
+                    String w = attributes.getNamedItem("Width").getNodeValue();
+                    String h = attributes.getNamedItem("Height").getNodeValue();
+                    nodeText+=width + w + height + h;
                 }
             }
-            
-            //width/height
-            if (attributes.getNamedItem("Width")!=null && attributes.getNamedItem("Height")!=null) {
-                String w = attributes.getNamedItem("Width").getNodeValue();
-                String h = attributes.getNamedItem("Height").getNodeValue();
-                nodeText+=width + w + height + h;
-            }
-            
             
             
             nodeText+=nodeTextEnd;
@@ -575,12 +589,12 @@ public class Pathwayprototype {
             if (attributes.getNamedItem("CenterX")!=null && attributes.getNamedItem("CenterY")!=null) {
                 String xpos = attributes.getNamedItem("CenterX").getNodeValue();
                 String ypos = attributes.getNamedItem("CenterY").getNodeValue();
-                this.positionMap.add(singleQuote+graphID+singleQuote+colon+space+startCurlyBrace+x+xpos+y+ypos+endCurlyBrace);
+                this.positionMap.put(graphID,singleQuote+graphID+singleQuote+colon+space+startCurlyBrace+x+xpos+y+ypos+endCurlyBrace);
             }
             else if (attributes.getNamedItem("X")!=null && attributes.getNamedItem("Y")!=null) {
                 String xpos = attributes.getNamedItem("X").getNodeValue();
                 String ypos = attributes.getNamedItem("Y").getNodeValue();
-                this.positionMap.add(singleQuote+graphID+singleQuote+colon+space+startCurlyBrace+x+xpos+y+ypos+endCurlyBrace);
+                this.positionMap.put(graphID,singleQuote+graphID+singleQuote+colon+space+startCurlyBrace+x+xpos+y+ypos+endCurlyBrace);
             }
             
             
@@ -590,7 +604,9 @@ public class Pathwayprototype {
         if (addToNonGeneProductNodes) {
             nonGeneProductNodes.put(graphID, nodeText);
         }
-        
+        else if (addToGeneProductNodes) {
+            geneProducts.put(graphID,nodeText);
+        }
         return nodeText;
     }
     private Node getShapeGraphicsNode(Node node) {
@@ -607,7 +623,7 @@ public class Pathwayprototype {
         }
         node.removeChild(childNode);
     }
-    private String processEdge(Node edgeNode, HashMap<String,String> nonGeneProductNodes, HashSet<String> geneProducts) {
+    private String processEdge(Node edgeNode, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts) {
         boolean arrowHead = true;
         Node target, source, nodeChild = edgeNode.getFirstChild();
         
@@ -640,23 +656,34 @@ public class Pathwayprototype {
             anchor = anchor.getNextSibling();
         }
         if (anchor!=null) {
+            if (anchor.getAttributes().getNamedItem("GraphID")==null && anchor.getAttributes().getNamedItem("GraphRef")==null && anchor.getAttributes().getNamedItem("Type")==null) {
+                ((Element) anchor).removeAttribute("Type");
+                ((Element) anchor).setAttribute("Anchor","true");
+                String anchorGraphID = getGraphRefID(anchor, nonGeneProductNodes, geneProducts, positionMap);
+                ((Element) anchor).setAttribute("GraphId",anchorGraphID);
+            }
             edgeText+=makeEdgeText(edgeNode,source, anchor, nonGeneProductNodes, geneProducts);
             edgeText+=linebreak;
             edgeText+=makeEdgeText(edgeNode,anchor, target, nonGeneProductNodes, geneProducts);
         }
         else {
             //check if elbow edge (perpendicular)
-            if (edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow") && this.getElbowCoordinates(source, target)!=null) {
+            if (edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow") && this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes)!=null) {
                 //give elbow positioning
-                String elbowGraphID = this.getElbowCoordinates(source, target);
+                String elbowGraphID = this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes);
+                //need null check
                 String[] elbowCoordinates = elbowGraphID.split(" ");
                 //make a node for the elbow anchor
                 Element elbow = (Element) source.cloneNode(false);
                 elbow.setAttribute("X",elbowCoordinates[0]);
                 elbow.setAttribute("Y",elbowCoordinates[1]);
-                elbow.removeAttribute("GraphId");
+                elbow.setAttribute("GraphId",elbowGraphID);
                 elbow.removeAttribute("GraphRef");
+                elbow.removeAttribute("Type");
                 elbow.setAttribute("Elbow","true");
+                if (target.getAttributes().getNamedItem("ArrowHead")!=null && target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("mim-inhibition")) {
+                    elbow.setAttribute("ArrowHead","inhibitorElbow");
+                }
                 elbow.setAttribute("TextLabel","");
                 edgeText+=makeEdgeText(edgeNode,source, elbow, nonGeneProductNodes, geneProducts);
                 edgeText+=linebreak;
@@ -664,36 +691,80 @@ public class Pathwayprototype {
                 //make sure elbow arms are red if part of an inhibition arrow
             }
             else {
-                edgeText+=makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
+                edgeText += makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
             }
         }
         
         return edgeText;
     }
-    private String getElbowCoordinates(Node source, Node target) {
+    private String getElbowCoordinates(Node source, Node target, HashMap<String,String> geneProductNodes, HashMap<String,String> nonGeneProductNodes) {
         String coordinates = "";
-        if (target.getAttributes().getNamedItem("X")!= null) {
+        String sourceID, targetID;  
+        if (source.getAttributes().getNamedItem("GraphId")!=null) {
+            sourceID = source.getAttributes().getNamedItem("GraphId").getNodeValue();
+        }
+        else if (source.getAttributes().getNamedItem("GraphRef")!=null) {
+            sourceID = source.getAttributes().getNamedItem("GraphRef").getNodeValue();
+        }
+        else {
+            sourceID = null;
+        }
+        if (target.getAttributes().getNamedItem("GraphId")!=null) {
+            targetID = target.getAttributes().getNamedItem("GraphId").getNodeValue();
+        }
+        else if (target.getAttributes().getNamedItem("GraphRef")!=null) {
+            targetID = target.getAttributes().getNamedItem("GraphRef").getNodeValue();
+        }
+        else {
+            targetID = null;
+        }
+        
+        String nodeText = positionMap.get(targetID);
+        if (targetID!=null && nodeText!=null) {
+            //regex extract
+            String regEx = "x:([^,]*),";
+            Pattern p;
+            Matcher m;
+            p=Pattern.compile(regEx);
+            m = p.matcher(nodeText);
+            if (m.find()) {
+                coordinates+=m.group(1).trim();
+            }
+        }
+        else if (target.getAttributes().getNamedItem("X")!= null) {
             coordinates+=target.getAttributes().getNamedItem("X").getNodeValue();
         }
-        else if (target.getAttributes().getNamedItem("CenterX")!=null) {
+        else if (target.getAttributes().getNamedItem("CenterX") != null) {
             coordinates+=target.getAttributes().getNamedItem("CenterX").getNodeValue();
         }
         else {
             return null;
         }
         coordinates+=" ";
-        if (source.getAttributes().getNamedItem("Y")!= null) {
+        nodeText = positionMap.get(sourceID);
+        if (sourceID!=null && nodeText!=null) {
+            //regex extract
+            String regEx = "y:([^}]*)}";
+            Pattern p;
+            Matcher m;
+            p=Pattern.compile(regEx);
+            m = p.matcher(nodeText);
+            if (m.find()) {
+                coordinates+=m.group(1).trim();
+            }
+        }
+        else if (source.getAttributes().getNamedItem("Y")!= null) {
             coordinates+=source.getAttributes().getNamedItem("Y").getNodeValue();
         }
         else if (source.getAttributes().getNamedItem("CenterY")!=null) {
             coordinates+=source.getAttributes().getNamedItem("CenterY").getNodeValue();
-        }   
+        }
         else {
             return null;
         }
         return coordinates;
     }
-    private String makeEdgeText(Node graphics, Node source, Node target, HashMap<String,String> nonGeneProductNodes, HashSet<String> geneProducts) {
+    private String makeEdgeText(Node graphics, Node source, Node target, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts) {
         String sourcetext = "      { data: { source: '";
         String targettext = ", target: '";
         String labelText = ", label: '";
@@ -706,12 +777,14 @@ public class Pathwayprototype {
         String inhibitionString = "mim-inhibition";
         String catalysisString = "mim-catalysis";
         String bindingString = "mim-binding";
+        String inhibitorElbowText = "inhibitorElbow";
         String haystackText = ", haystackStyle: true";
+        String redColorText = ", color: 'red'";
         
         String edgeText = sourcetext;
-        edgeText+= this.getGraphRefID(source, nonGeneProductNodes, geneProducts, positionMap)+singlequote;
+        edgeText+= this.getEdgeGraphRefID(source, nonGeneProductNodes, geneProducts, positionMap)+singlequote;
         edgeText+=targettext;
-        edgeText+= this.getGraphRefID(target, nonGeneProductNodes, geneProducts, positionMap)+singlequote;
+        edgeText+= this.getEdgeGraphRefID(target, nonGeneProductNodes, geneProducts, positionMap)+singlequote;
         
         //MIM arrowhead conventions can be found here: http://discover.nci.nih.gov/mim/mapDesc.html
         
@@ -729,10 +802,13 @@ public class Pathwayprototype {
                 edgeText+=circularArrowHeadText;
             }
             else if (arrowHeadType.equals(inhibitionString)) {
-                edgeText+=teeArrowHeadText;
+                edgeText+=teeArrowHeadText+redColorText;
             }
             else if (arrowHeadType.equals(bindingString)) {
                 edgeText+=veeArrowHeadText;
+            }
+            else if (arrowHeadType.equals(inhibitorElbowText)) {
+                edgeText+=redColorText+noArrowHeadText;
             }
             else {
                 edgeText+=triangleArrowHeadText;
@@ -744,7 +820,7 @@ public class Pathwayprototype {
         edgeText+=endlinetext;
         return edgeText;
     }
-    private String getGraphRefID(Node node, HashMap<String,String> nonGeneProductNodes, HashSet<String> geneProducts, ArrayList<String> positionMap) {
+    private String getGraphRefID(Node node, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, HashMap<String,String> positionMap) {
         String graphID;
         boolean newNonGeneProduct = false;
         if (node.getAttributes().getNamedItem("GraphRef")!=null) {
@@ -764,31 +840,25 @@ public class Pathwayprototype {
             graphID = node.getAttributes().getNamedItem("Position").getNodeValue();
         }
         //check centerx and figure out some defautl... maybe position
-        String nodeText = "      { data: { id: '"+ graphID + "', name: ''";
-        if (!geneProducts.contains(graphID) && !nonGeneProductNodes.containsKey(graphID)) {
+        if (!geneProducts.containsKey(graphID) && !nonGeneProductNodes.containsKey(graphID)) {
             //check if there is positional information
             if (node.getAttributes().getNamedItem("X")!=null){
-                positionMap.add("'"+graphID+"': {x: "+node.getAttributes().getNamedItem("X").getNodeValue()+", y: "+node.getAttributes().getNamedItem("Y").getNodeValue()+"}");
+                positionMap.put(graphID,"'"+graphID+"': {x: "+node.getAttributes().getNamedItem("X").getNodeValue()+", y: "+node.getAttributes().getNamedItem("Y").getNodeValue()+"}");
             }
             else if (node.getAttributes().getNamedItem("CenterX")!=null) {
-                positionMap.add("'"+graphID+"': {x: "+node.getAttributes().getNamedItem("CenterX").getNodeValue()+", y: "+node.getAttributes().getNamedItem("CenterY").getNodeValue()+"}");
+                positionMap.put(graphID,"'"+graphID+"': {x: "+node.getAttributes().getNamedItem("CenterX").getNodeValue()+", y: "+node.getAttributes().getNamedItem("CenterY").getNodeValue()+"}");
             }
-            newNonGeneProduct = true;
-            nodeText+=", placementNode: true";
-        }
-        if (node.getAttributes().getNamedItem("parentID")==null){
-            nodeText+=", parent: 'superparent'";
-        } 
-        if (node.getAttributes().getNamedItem("Elbow")!=null) {
-            nodeText+=", isElbowEdge: true";
-        }
-        nodeText+=" } }";
-        if (newNonGeneProduct) {
-            nonGeneProductNodes.put(graphID, nodeText);
         }
         return graphID;
     }
-    
+    private String getEdgeGraphRefID(Node node, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, HashMap<String,String> positionMap) {
+        String graphID = getGraphRefID(node,nonGeneProductNodes, geneProducts, positionMap);
+        if (!geneProducts.containsKey(graphID) && !nonGeneProductNodes.containsKey(graphID)) {
+            ((Element) node).setAttribute("isPlacementNode","true");
+            processNode(node,nonGeneProductNodes, geneProducts, this.positionMap);
+        }
+        return graphID;
+    }
     public void readVCF(String filename, String GENE_REGEX, String EFFECT_REGEX, String GENES_NOT_IN_GENESETS_FILE) {
         genes = new ArrayList<String>();
         effects = new ArrayList<String>();
