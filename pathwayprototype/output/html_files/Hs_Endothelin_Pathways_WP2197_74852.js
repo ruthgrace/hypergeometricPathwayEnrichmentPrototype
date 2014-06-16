@@ -47,10 +47,12 @@ $('#cy').cytoscape({
 , 'f168a_smaller_outline': {x: 704.0, y: 254.5}
 , 'feb': {x: 480.0, y: 573.3333333333334}
 , 'f7a5d': {x: 281.32704156249997, y: 586.8821603125002}
+, 'a4430': {x: 341.5004858799885, y: 396.7601765075444}
 , 'ec8': {x: 329.0, y: 340.3333333333333}
 , '376.5 316.0': {x: 376.5, y: 316.0}
 , 'ec6': {x: 113.33333333333333, y: 260.0}
 , 'ba19a': {x: 1310.5014212257686, y: 1677.1457315320508}
+, 'c0727': {x: 1136.5479429638015, y: 216.0}
 , 'a89f0': {x: 768.6666666666666, y: 570.3333333333334}
 , 'b64df': {x: 136.58823529411825, y: 166.0}
 , 'b01': {x: 1186.6666666666667, y: 840.0}
@@ -73,22 +75,25 @@ $('#cy').cytoscape({
 , '686.9999999999964 772.6593972779065': {x: 686.9999999999964, y: 772.6593972779065}
 , 'db4d9': {x: 182.15336134453787, y: 698.5}
 , 'a80d3': {x: 1389.486761840887, y: 1462.3046213790676}
-, 'ede99': {x: 276.42857142857076, y: 612.9523809523812}
+, 'ede99': {x: 276.42857142857076, y: 524.8253968253971}
 , 'ee8db': {x: 386.8643042350908, y: 1268.5}
 , 'd01': {x: 460.0, y: 786.6666666666666}
 , 'b6e0d': {x: 883.3076218116039, y: 685.3542095196932}
 , 'eb8b9': {x: 1229.1261058413972, y: 1544.5051259940597}
+, 'bdaf5': {x: 214.56268731056053, y: 1106.9221333290761}
 , 'e6407': {x: 541.8784055883286, y: 493.34387745059496}
 , 'e7689': {x: 768.6666666666666, y: 590.3333333333334}
 , '917.0 1179.0': {x: 917.0, y: 1179.0}
 , 'd2652': {x: 193.5, y: 1430.0}
 , 'cce5c': {x: 1063.5, y: 685.0}
 , '675.3333333333298 712.3333333333275': {x: 675.3333333333298, y: 712.3333333333275}
+, 'e5c29': {x: 1082.7703363035344, y: 1661.0}
 , 'f0b36': {x: 1179.5, y: 686.0}
 , '401.95903919359023 941.0': {x: 401.95903919359023, y: 941.0}
 , 'fe456': {x: 189.0, y: 572.0}
 , 'ea1': {x: 460.0, y: 806.6666666666666}
 , 'c4fa4': {x: 135.5, y: 621.5}
+, 'd1a43': {x: 161.2442549337761, y: 426.0}
 , 'b3270': {x: 677.9999999999965, y: 1205.5238095238083}
 , 'cce62': {x: 769.5316283868125, y: 1223.5238095238085}
 , 'b1e7f': {x: 646.6666666666666, y: 553.0}
@@ -129,7 +134,6 @@ $('#cy').cytoscape({
 , 'dd9': {x: 900.0, y: 914.6666666666666}
 , 'c25': {x: 1186.6666666666667, y: 800.0}
 , 'c1495': {x: 730.9999999999964, y: 731.8597491448065}
-, '298.0218329306179 481.0': {x: 298.0218329306179, y: 481.0}
 , '202.0 136.0': {x: 202.0, y: 136.0}
 , 'd0b': {x: 1140.0, y: 223.33333333333334}
 , 'fc9': {x: 326.6666666666667, y: 926.6666666666666}
@@ -165,7 +169,6 @@ $('#cy').cytoscape({
 , 'f168a': {x: 704.0, y: 254.5}
 , 'd74b5': {x: 285.91807838718046, y: 1106.9221333290739}
 , 'd40': {x: 566.6666666666666, y: 963.3333333333334}
-, '136.58823529411825 392.50568480058405': {x: 136.58823529411825, y: 392.50568480058405}
 , 'c1f84': {x: 1179.5, y: 666.0}
 , 'c06': {x: 176.66666666666666, y: 193.33333333333334}
 , 'c04': {x: 1184.9166666666667, y: 452.6666666666667}
@@ -198,6 +201,7 @@ $('#cy').cytoscape({
 , 'f5531': {x: 1470.4097601481913, y: 1300.5014212257677}
 , '106.82461202382979 99.0': {x: 106.82461202382979, y: 99.0}
 , 'fcb': {x: 1186.6666666666667, y: 720.0}
+, 'b9e2c': {x: 384.81372228369264, y: 760.0}
 , 'bd0': {x: 90.0, y: 806.6666666666666}
 , 'abc': {x: 90.0, y: 826.6666666666666}
 , 'e91': {x: 146.66666666666666, y: 486.6666666666667}
@@ -222,7 +226,7 @@ $('#cy').cytoscape({
 , 'bd3': {x: 656.6666666666666, y: 200.0}
 , 'd4aa0': {x: 277.58730158730185, y: 583.559523809524}
 , 'eef9c': {x: 313.0, y: 1084.135695764909}
-, 'ef34a': {x: 318.4470658386213, y: 686.0113696011681}
+, 'ef34a': {x: 238.28669743852737, y: 686.0113696011681}
 , 'b9e3b': {x: 367.8333333333335, y: 687.5}
 , 'aaf': {x: 898.6666666666666, y: 846.6666666666666}
 , 'f2d06': {x: 1136.5479429638015, y: 150.14394298523695}
@@ -251,7 +255,6 @@ $('#cy').cytoscape({
 , 'f9cd2': {x: 1582.926526564924, y: 1156.2345109901744}
 , 'a07bf': {x: 1437.6492266664359, y: 1241.4259158840398}
 , 'a456b': {x: 732.9389965792438, y: 892.7194982896183}
-, '37.0 392.50568480058405': {x: 37.0, y: 392.50568480058405}
 , 'bdd': {x: 326.6666666666667, y: 826.6666666666666}
 , '1082.7703363035344 1631.1004980994912': {x: 1082.7703363035344, y: 1631.1004980994912}
 , 'dd8c6': {x: 768.6666666666666, y: 410.3333333333333}
@@ -300,7 +303,7 @@ $('#cy').cytoscape({
 , '454.0 1340.0': {x: 454.0, y: 1340.0}
 , 'e6a1f': {x: 771.9798479820665, y: 349.974090262657}
 , 'e99': {x: 146.66666666666666, y: 406.6666666666667}
-, 'bff48': {x: 646.1666666666666, y: 591.0}
+, 'bff48': {x: 646.1666666666666, y: 356.0}
 , 'be7': {x: 538.3333333333334, y: 340.0}
 , 'fa9': {x: 656.6666666666666, y: 240.0}
 , '1056.277665995974 1468.159474574169': {x: 1056.277665995974, y: 1468.159474574169}
@@ -321,10 +324,10 @@ $('#cy').cytoscape({
 , 'f206f': {x: 1324.5539906103295, y: 1525.1224809172504}
 , 'b40d7': {x: 313.8333333333335, y: 837.5}
 , '629.9999999999969 990.9999999999945': {x: 629.9999999999969, y: 990.9999999999945}
-, '344.75 623.0': {x: 344.75, y: 623.0}
 , 'fbe8a': {x: 1412.445774643627, y: 699.7177356331042}
 , '193.5 1420.0': {x: 193.5, y: 1420.0}
 , 'd36d1': {x: 70.93881856540082, y: 796.0}
+, 'c92b8': {x: 595.8156598528271, y: 660.6464657405594}
 , 'db6fe': {x: 1057.9127462487559, y: 1693.130609139168}
 , 'd0cf3': {x: 228.10994397759129, y: 982.5588235294122}
 , 'd5097': {x: 230.61904761904674, y: 569.5238095238094}
@@ -354,15 +357,14 @@ $('#cy').cytoscape({
 , 'a3f57': {x: 277.5873015873016, y: 569.2976190476192}
 , 'af3': {x: 326.6666666666667, y: 806.6666666666666}
 , 'cd0ee': {x: 277.58730158730185, y: 597.8214285714288}
-, '136.09153674958844 426.0': {x: 136.09153674958844, y: 426.0}
 , '686.9999999999964 892.6570196866903': {x: 686.9999999999964, y: 892.6570196866903}
+, 'af96c': {x: 313.5436658612358, y: 481.0}
 , 'f0e9c': {x: 313.5, y: 1248.0}
 , 'cae70': {x: 655.6533496707339, y: 554.9288583797635}
 , 'c5e16': {x: 1078.0335106340017, y: 412.39536339945107}
 , '433.0 1222.0': {x: 433.0, y: 1222.0}
 , 'db738': {x: 817.0290220991437, y: 694.9999999999955}
 , 'a91ba': {x: 646.6666666666666, y: 493.0}
-, '384.81372228369264 760.0': {x: 384.81372228369264, y: 760.0}
 , 'c8ad5': {x: 657.6666666666642, y: 1044.29862136878}
 , 'd7c1e': {x: 817.7485203887675, y: 646.9999999999964}
 , 'fb220': {x: 393.0, y: 642.5}
@@ -386,6 +388,7 @@ $('#cy').cytoscape({
 , 'bf771': {x: 324.2539682539677, y: 584.8253968253968}
 , 'bf37b': {x: 677.9999999999965, y: 1222.5238095238087}
 , 'd2f82': {x: 350.0, y: 1428.5}
+, '658.0855404846313 739.1976361303985': {x: 658.0855404846313, y: 739.1976361303985}
 , 'f96a0': {x: 143.0767281801347, y: 578.8434605920133}
 , 'f37': {x: 900.0, y: 954.6666666666666}
 , 'abe0f': {x: 230.61904761904674, y: 597.5873015873017}
@@ -430,6 +433,7 @@ $('#cy').cytoscape({
 , 'b2cd5': {x: 270.0, y: 405.0}
 , 'f0c': {x: 1186.6666666666667, y: 243.33333333333334}
 , 'f7de7': {x: 287.3333333333335, y: 857.0}
+, 'ec60e': {x: 1534.926526564924, y: 1137.2345109901742}
 , 'b773f': {x: 1353.0, y: 667.0}
 , 'e29': {x: 460.0, y: 746.6666666666666}
 , 'f23': {x: 686.6666666666666, y: 746.6666666666666}
@@ -451,7 +455,6 @@ $('#cy').cytoscape({
 , 'e4727': {x: 645.6666666666666, y: 374.0}
 , 'edae8': {x: 328.3333333333335, y: 1182.0}
 , '1070.1101849190356 1468.1594081905812': {x: 1070.1101849190356, y: 1468.1594081905812}
-, '419.1568611418463 760.0': {x: 419.1568611418463, y: 760.0}
 , 'c1b78': {x: 472.8634591576573, y: 673.1155658351202}
 , 'ca6': {x: 600.0, y: 453.3333333333333}
 , '401.2772500000001 1271.072268554687': {x: 401.2772500000001, y: 1271.072268554687}
@@ -541,7 +544,7 @@ $('#cy').cytoscape({
 , 'cf028': {x: 250.5, y: 655.0}
 , 'c3487': {x: 754.0450127599462, y: 1044.388771243952}
 , '70.12095639943743 464.8438818565401': {x: 70.12095639943743, y: 464.8438818565401}
-, 'e4884': {x: 179.32884433643926, y: 559.4217302960067}
+, 'e4884': {x: 106.82461202382979, y: 559.4217302960067}
 , 'a300f': {x: 727.3437584840058, y: 968.8597491448064}
 , 'eac5c': {x: 734.3437584840058, y: 812.9999999999945}
 , 'a91': {x: 901.6666666666666, y: 648.6666666666666}
@@ -555,7 +558,6 @@ $('#cy').cytoscape({
 , 'b7ab7': {x: 657.6666666666642, y: 1010.79862136878}
 , 'd3170': {x: 831.3981481481487, y: 675.3194444444447}
 , 'c55': {x: 480.0, y: 393.3333333333333}
-, '313.41666666666674 760.4355716878403': {x: 313.41666666666674, y: 760.4355716878403}
 , 'fd30a': {x: 340.0807499999997, y: 263.36225000000053}
 , 'f0590': {x: 277.6507936507937, y: 541.0000000000002}
 , '246.33333333333348 1152.0': {x: 246.33333333333348, y: 1152.0}
@@ -604,10 +606,9 @@ $('#cy').cytoscape({
 , 'c5d': {x: 566.6666666666666, y: 866.6666666666666}
 , 'c5f9c': {x: 135.95786118440114, y: 750.8613445378171}
 , '686.9999999999964 932.6570196866903': {x: 686.9999999999964, y: 932.6570196866903}
-, '161.2442549337761 426.0': {x: 161.2442549337761, y: 426.0}
 , 'd0796': {x: 621.6166340387825, y: 371.25550394771864}
-, '313.0 866.0': {x: 313.0, y: 866.0}
 , 'b5b': {x: 1186.6666666666667, y: 880.0}
+, '313.0 866.0': {x: 313.0, y: 866.0}
 , 'a67': {x: 869.0, y: 413.6666666666667}
 , 'b5a': {x: 600.0, y: 513.3333333333334}
 , 'f45c7': {x: 1238.75, y: 705.0}
@@ -626,7 +627,6 @@ $('#cy').cytoscape({
 , 'a204f': {x: 816.30952380952, y: 672.9999999999959}
 , 'd75': {x: 1183.3333333333333, y: 186.66666666666666}
 , '1032.225096611414 1678.645737791611': {x: 1032.225096611414, y: 1678.645737791611}
-, '362.5 623.0': {x: 362.5, y: 623.0}
 , 'faff4': {x: 1412.445774643627, y: 561.0554217855089}
 , 'dbfe0': {x: 877.9798479820665, y: 386.1040902626571}
 , 'a2f': {x: 1226.6666666666667, y: 203.33333333333334}
@@ -639,11 +639,10 @@ $('#cy').cytoscape({
 , 'cee': {x: 600.0, y: 493.3333333333333}
 , 'dd428': {x: 282.1000281809105, y: 630.1544413557688}
 , 'd3f0c': {x: 230.5, y: 426.0}
-, '263.93434873949604 760.4355716878403': {x: 263.93434873949604, y: 760.4355716878403}
 , '70.12095639943743 464.25035161744023': {x: 70.12095639943743, y: 464.25035161744023}
 , 'a53': {x: 1176.6666666666667, y: 250.0}
 , '1082.0478426112204 1520.2325061479992': {x: 1082.0478426112204, y: 1520.2325061479992}
-, 'c6a50': {x: 768.6666666666666, y: 608.3333333333334}
+, 'c6a50': {x: 768.6666666666666, y: 372.33333333333337}
 , 'ed5af': {x: 742.9389965792438, y: 911.7194982896183}
 , 'fe396_smaller_outline': {x: 241.5, y: 269.5}
 , '1082.6651975344093 1468.4721024560067': {x: 1082.6651975344093, y: 1468.4721024560067}
@@ -665,9 +664,12 @@ $('#cy').cytoscape({
 , 'a0e': {x: 66.66666666666667, y: 250.0}
 , 'b0f': {x: 480.0, y: 453.3333333333333}
 , 'cb184': {x: 473.8403361344537, y: 268.235294117647}
+, 'de775': {x: 340.6727292590983, y: 302.4450649354732}
 , 'ecdc6': {x: 598.6428217725611, y: 645.6560414912341}
 , '544.08375 1271.07225': {x: 544.08375, y: 1271.07225}
 , 'd63d8': {x: 618.6666666666666, y: 211.0}
+, 'cfb78': {x: 1524.5921250000008, y: 869.4085470624996}
+, 'fcd71': {x: 877.9798479820665, y: 349.96746010425653}
 , '328.0 1160.0': {x: 328.0, y: 1160.0}
 , 'e7508': {x: 1211.8059832920417, y: 1377.0567942804191}
 , 'fa2f3': {x: 739.7194982896201, y: 713.999999999995}
@@ -683,7 +685,6 @@ $('#cy').cytoscape({
 , 'ceb8f': {x: 747.3835586686179, y: 1239.3835586686212}
 , 'b10': {x: 1256.6666666666667, y: 253.33333333333334}
 , 'c8e': {x: 600.0, y: 573.3333333333334}
-, '313.5436658612358 481.0': {x: 313.5436658612358, y: 481.0}
 , 'de049': {x: 531.9990624999994, y: 1310.591687500001}
 , '1043.7226533806006 1678.0069738260042': {x: 1043.7226533806006, y: 1678.0069738260042}
 , 'ad6b2': {x: 1063.5, y: 705.0}
@@ -705,6 +706,7 @@ $('#cy').cytoscape({
 , 'b23': {x: 1230.0, y: 246.66666666666666}
 , '313.0 602.0': {x: 313.0, y: 602.0}
 , 'a29': {x: 900.0, y: 974.6666666666666}
+, 'dc6f1': {x: 399.4680843589353, y: 426.0}
 , 'cb8aa': {x: 1376.8873946267788, y: 868.6804245497667}
 , 'ecbcb': {x: 678.9999999999965, y: 1145.5238095238064}
 , 'e1a64': {x: 393.56585775392074, y: 723.9932523188667}
@@ -986,89 +988,131 @@ elements: {
       { data: { id: 'ecbbe', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'd3783', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'c3a56', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'e2338', parent: 'superparent', name: 'Endothelial cell', isLabel: true, width: 137.1031377511196, height: 20.0} },
-      { data: { id: 'de775', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: 'fd30a', parent: 'superparent', name: 'Pre-pro ET1', width: 80.0, height: 20.0} },
-      { data: { id: 'ecdc6', parent: 'superparent', name: 'PIP2', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'dd011', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'cfb78', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: 'e7324', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'a26a8', parent: 'superparent', name: 'Smooth muscle cell', isLabel: true, width: 180.78952888505182, height: 20.0} },
-      { data: { id: 'fcd71', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: 'aa3af', parent: 'superparent', name: 'Furin-like protease', width: 108.29987499999999, height: 20.0} },
-      { data: { id: 'e7508', parent: 'superparent', name: 'Ca2+ channel', width: 80.0, height: 20.0} },
-      { data: { id: 'eb0f9', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'd3117', parent: 'superparent', name: 'IP3R', width: 80.0, height: 20.0} },
+      { data: { id: 'e7324', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '658.0855404846313 739.1976361303985', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'add66', parent: 'superparent', name: 'IP3', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'fd55e', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'c8483', parent: 'superparent', name: 'L-Arginine', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '1041.1676407652242 1521.1759077424579', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '718.7962625090095 463.29020718749996', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1055.2202101497871 1628.8229917918025', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1096.4977164574732 1520.5371682111518', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1043.722653380601 1629.4617341338833', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'f2034', parent: 'superparent', name: '', shape: 'rectangle', width: 198.45387499999995, height: 4.950875000001757} },
-      { data: { id: 'a59f1', parent: 'superparent', name: '', shape: 'rectangle', width: 198.45387499999995, height: 4.950875000001757} },
       { data: { id: 'fcf85', parent: 'superparent', name: '', shape: 'rectangle', width: 16.265114013449875, height: 119.55728316153386} },
       { data: { id: 'e60ff', parent: 'superparent', name: '', shape: 'endoplasmic reticulum', width: 219.74544781250216, height: 218.47510976740097} },
-      { data: { id: 'c92b8', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: 'db6fe', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'af7ab', parent: 'superparent', name: 'PIP2', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'de049', parent: 'superparent', name: '', shape: 'rectangle', width: 198.45387499999995, height: 4.950875000001757} },
       { data: { id: 'f73dd', parent: 'superparent', name: 'Vasocontriction', isLabel: true, width: 126.0, height: 20.0} },
-      { data: { id: 'f8701', parent: 'superparent', name: 'PGI2', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'e58f6', parent: 'superparent', name: 'cAMP', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '805.5733241785512 791.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'f2d06', parent: 'superparent', name: 'Arachidonic acid', isMetabolite: true, width: 93.09588592760292, height: 20.0} },
+      { data: { id: '241.40909325948223 989.5248063380283', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'b2b06', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '401.2772254219053 1298.4366113281253', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1096.4977164574732 1468.1594095959686', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1069.2727795343442 1678.645737791612', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'a4430', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: 'd0796', parent: 'superparent', name: 'IP3', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'c0727', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: '667.9496357498166 1298.4366250000007', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'd8cfe', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '823.3076218116055 692.2759228250454', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ea673', parent: 'superparent', name: 'DAG', isMetabolite: true, width: 81.03934441596493, height: 20.009596199016514} },
+      { data: { id: '1082.7703363035344 1631.1004980994912', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'e6db6', parent: 'superparent', name: 'DAG', isMetabolite: true, width: 81.03934441596493, height: 20.009596199016514} },
+      { data: { id: '1032.225096611414 1678.645737791611', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'faff4', parent: 'superparent', name: 'PGI2', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'dbfe0', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'b0612', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '661.4089571866612 689.1920437499999', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1041.167640765225 1467.5206428195859', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ec60e', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'eb8b9', parent: 'superparent', name: '', shape: 'ellipse', width: 83.9853406151201, height: 61.32030276899468} },
+      { data: { id: 'bdaf5', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: 'b8b30', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '815.8765159867695 1178.6108048511576', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1082.0478426112204 1520.2325061479992', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '917.0 1179.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1032.225096611414 1628.8229917918027', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'e5c29', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: '1082.6651975344093 1468.4721024560067', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'd3783', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '525.1431004219038 1298.4366113281253', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ffa5e', parent: 'superparent', name: 'Cellular growth and survival', isLabel: true, width: 205.0, height: 19.0} },
+      { data: { id: '401.95903919359023 941.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'bc5ee', parent: 'superparent', name: '', shape: 'ellipse', width: 1679.1663663006002, height: 779.3413950757457} },
+      { data: { id: '1055.2202101497871 1678.6457377916108', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ec739', parent: 'superparent', name: '', shape: 'endoplasmic reticulum', width: 312.1228693786786, height: 257.6862423234602} },
+      { data: { id: 'e6a1f', parent: 'superparent', name: 'Citrulline', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '1070.1101849190356 1468.1594081905812', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1082.7703363035344 1678.3682314839248', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '667.949625 1271.07225', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1056.277665995974 1468.159474574169', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'e2338', parent: 'superparent', name: 'Endothelial cell', isLabel: true, width: 137.1031377511196, height: 20.0} },
+      { data: { id: 'ecdc6', parent: 'superparent', name: 'PIP2', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'de775', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: '544.08375 1271.07225', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'cfb78', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: 'fcd71', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: '401.2772500000001 1271.072268554687', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '525.1431249999996 1271.072268554687', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'eb0f9', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'fd55e', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'c8483', parent: 'superparent', name: 'L-Arginine', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'a59f1', parent: 'superparent', name: '', shape: 'rectangle', width: 198.45387499999995, height: 4.950875000001757} },
+      { data: { id: 'db6fe', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: 'c92b8', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'de049', parent: 'superparent', name: '', shape: 'rectangle', width: 198.45387499999995, height: 4.950875000001757} },
+      { data: { id: '1043.7226533806006 1678.0069738260042', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '202.0 136.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'f8701', parent: 'superparent', name: 'PGI2', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'f16ec', parent: 'superparent', name: '', shape: 'ellipse', width: 87.8178595381828, height: 63.54523969212005} },
       { data: { id: 'aecb5', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'fae93', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: 'fae93', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'f22ba', parent: 'superparent', name: '', shape: 'roundrectangle', width: 1182.977572043664, height: 100.0} },
       { data: { id: 'c3a56', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'cdd88', parent: 'superparent', name: '', shape: 'ellipse', width: 94.53546676886708, height: 52.87775861518321} },
-      { data: { id: 'a4430', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: 'c32c0', parent: 'superparent', name: '', placementNode: true, anchor: true} },
       { data: { id: 'd16ab', parent: 'superparent', name: 'Sympathic nerve', isLabel: true, width: 174.14208567901187, height: 20.0} },
+      { data: { id: 'c32c0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'e2944', parent: 'superparent', name: 'ATP', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'd0796', parent: 'superparent', name: 'IP3', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'c0727', parent: 'superparent', name: '', placementNode: true, anchor: true} },
       { data: { id: 'fe947', parent: 'superparent', name: '', shape: 'roundrectangle', width: 1182.977572043664, height: 100.0} },
-      { data: { id: 'd8cfe', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: '399.34066506506065 929.7618459465529', parent: 'superparent', name: '', placementNode: true, elbow: true} },
-      { data: { id: 'c2438', parent: 'superparent', name: 'PMCA', width: 80.0, height: 22.0} },
-      { data: { id: 'ea673', parent: 'superparent', name: 'DAG', isMetabolite: true, width: 81.03934441596493, height: 20.009596199016514} },
+      { data: { id: '1207.709633244886 987.841929375', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'f53a1', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'ebbb0', parent: 'superparent', name: '', shape: 'ellipse', width: 277.53312500000027, height: 137.73687499999988} },
       { data: { id: 'e6f06', parent: 'superparent', name: '', shape: 'ellipse', width: 174.80137499999987, height: 124.36587499999973} },
-      { data: { id: 'e6db6', parent: 'superparent', name: 'DAG', isMetabolite: true, width: 81.03934441596493, height: 20.009596199016514} },
-      { data: { id: 'cfff8', parent: 'superparent', name: 'K+ channel', width: 80.0, height: 20.0} },
-      { data: { id: 'faff4', parent: 'superparent', name: 'PGI2', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'dbfe0', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'e87d7', parent: 'superparent', name: '', shape: 'roundrectangle', width: 1140.018867924528, height: 450.1431249999997} },
-      { data: { id: 'c5e16', parent: 'superparent', name: 'EDHF', width: 80.0, height: 20.0} },
-      { data: { id: 'b0612', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'd74b5', parent: 'superparent', name: 'cGMP', isMetabolite: true, width: 80.0, height: 20.0} },
       { data: { id: 'bcefc', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'b9f53', parent: 'superparent', name: 'Pre-pro ET1', width: 80.0, height: 20.0} },
-      { data: { id: 'e8f99', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: 'eb8b9', parent: 'superparent', name: '', shape: 'ellipse', width: 83.9853406151201, height: 61.32030276899468} },
-      { data: { id: 'bdaf5', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: '1070.1101849190356 1520.5371668057644', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '700.789614814452 418.67167751775537', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '758.8620308396111 1241.1859595070423', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'e8f99', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '359.34066506506065 856.8051210974252', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '341.5004858799885 343.11117315963435', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1056.277665995974 1520.5372331893523', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1202.1334355338379 1002.9574677699704', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'ecbbe', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
+      { data: { id: '569.7271676120155 667.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'd019a', parent: 'superparent', name: 'K+', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'b8b30', parent: 'superparent', name: 'Ca2+', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'e5c29', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: 'f2e4b', parent: 'superparent', name: 'Big ET1', width: 80.0, height: 20.0} },
-      { data: { id: 'dede3', parent: 'superparent', name: 'Ca2+ channel', width: 80.0, height: 20.0} },
-      { data: { id: 'd3783', parent: 'superparent', name: 'NO', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'ffa5e', parent: 'superparent', name: 'Cellular growth and survival', isLabel: true, width: 205.0, height: 19.0} },
+      { data: { id: 'a55f8', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '544.0837607498166 1298.4366250000007', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'fb7e4', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '1069.272779534349 1628.8229917918025', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'b4371', parent: 'superparent', name: '', shape: 'ellipse', width: 94.53546676886708, height: 52.87775861518321} },
       { data: { id: 'f6ba1', parent: 'superparent', name: 'Sensory motor nerve', isLabel: true, width: 174.14208567901187, height: 20.0} },
-      { data: { id: 'bc5ee', parent: 'superparent', name: '', shape: 'ellipse', width: 1679.1663663006002, height: 779.3413950757457} },
       { data: { id: 'b9719', parent: 'superparent', name: 'GTP', isMetabolite: true, width: 80.0, height: 20.0} },
-      { data: { id: 'ec739', parent: 'superparent', name: '', shape: 'endoplasmic reticulum', width: 312.1228693786786, height: 257.6862423234602} },
-      { data: { id: 'c59a7', parent: 'superparent', name: 'IP3R', width: 80.0, height: 20.0} },
-      { data: { id: 'e6a1f', parent: 'superparent', name: 'Citrulline', isMetabolite: true, width: 80.0, height: 20.0} }
+      { data: { id: 'c2b49', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '841.9415680016912 454.35623625', parent: 'superparent', name: '', placementNode: true} }
     ],
     edges: [
-      { data: { source: 'c2438', target: 'b0612', label: 'Arrow', triangleArrowHead: true } },
+      { data: { source: 'b0612', target: 'c2438', noArrowHead: true } },
       { data: { source: '700.789614814452 418.67167751775537', target: 'af7ab', noArrowHead: true } },
+      { data: { source: 'af7ab', target: 'd0796', label: 'cleavage', triangleArrowHead: true } },
       { data: { source: '841.9415680016912 454.35623625', target: 'af7ab', noArrowHead: true } },
+      { data: { source: 'af7ab', target: 'e6db6', label: 'cleavage', triangleArrowHead: true } },
       { data: { source: '718.7962625090095 463.29020718749996', target: 'e5627', noArrowHead: true } },
+      { data: { source: 'e5627', target: 'af7ab', label: 'catalysis', circularArrowHead: true } },
       { data: { source: 'fd55e', target: 'c6ea1', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'c6ea1', target: 'b8b30', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'c59a7', target: 'b8b30', label: 'Arrow', triangleArrowHead: true } },
@@ -1098,7 +1142,9 @@ elements: {
       { data: { source: 'e58f6', target: 'c036f', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: 'c036f', target: 'c798b', label: 'inhibition', teeArrowHead: true, color: 'red' } },
       { data: { source: '823.3076218116055 692.2759228250454', target: 'abe76', noArrowHead: true } },
-      { data: { source: 'c2b49', target: 'cb8aa', label: 'stimulation', triangleArrowHead: true } },
+      { data: { source: 'abe76', target: '658.0855404846313 739.1976361303985', noArrowHead: true } },
+      { data: { source: '658.0855404846313 739.1976361303985', target: 'c1b78', label: 'stimulation', triangleArrowHead: true } },
+      { data: { source: 'cb8aa', target: 'c2b49', noArrowHead: true } },
       { data: { source: '1041.167640765225 1467.5206428195859', target: '1041.1676407652242 1521.1759077424579', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'fae93', target: 'eb8b9', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: 'a80d3', target: 'f5531', label: 'stimulation', triangleArrowHead: true } },
@@ -1109,8 +1155,9 @@ elements: {
       { data: { source: '1069.272779534349 1628.8229917918025', target: '1069.2727795343442 1678.645737791612', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '1082.7703363035344 1631.1004980994912', target: 'e5c29', noArrowHead: true } },
       { data: { source: 'e5c29', target: '1082.7703363035344 1678.3682314839248', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: 'b5d52', target: 'a7e1c', label: 'stimulation', triangleArrowHead: true } },
-      { data: { source: '1202.1334355338379 1002.9574677699704', target: 'cb8aa', label: 'inhibition', teeArrowHead: true, color: 'red' } },
+      { data: { source: 'a7e1c', target: 'b5d52', noArrowHead: true } },
+      { data: { source: 'cb8aa', target: '1202.1334355338379 1002.9574677699704', noArrowHead: true } },
+      { data: { source: '1202.1334355338379 1002.9574677699704', target: 'ec60e', noArrowHead: true } },
       { data: { source: 'bcefc', target: 'ecbbe', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'ecbbe', target: 'b19b8', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: 'b9719', target: 'bdaf5', noArrowHead: true } },
@@ -1119,24 +1166,30 @@ elements: {
       { data: { source: 'd3783', target: 'bcefc', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'c3a56', target: 'e7508', label: 'conversion', triangleArrowHead: true } },
       { data: { source: '1207.709633244886 987.841929375', target: 'b2b06', noArrowHead: true } },
+      { data: { source: 'b2b06', target: 'e7508', label: 'inhibition', teeArrowHead: true, color: 'red' } },
       { data: { source: '758.8620308396111 1241.1859595070423', target: 'd74b5', noArrowHead: true } },
-      { data: { source: '241.40909325948223 989.5248063380283', target: 'c2438', label: 'stimulation', triangleArrowHead: true } },
+      { data: { source: 'd74b5', target: 'e7508', label: 'inhibition', teeArrowHead: true, color: 'red' } },
+      { data: { source: 'c2438', target: '241.40909325948223 989.5248063380283', noArrowHead: true } },
+      { data: { source: '241.40909325948223 989.5248063380283', target: 'd74b5', noArrowHead: true } },
       { data: { source: '401.95903919359023 941.0', target: 'd74b5', noArrowHead: true } },
+      { data: { source: 'd74b5', target: 'b65a0', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: '805.5733241785512 791.0', target: 'e7508', noArrowHead: true } },
+      { data: { source: 'e7508', target: 'aecb5', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'b095d', target: 'f6b3e', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: 'c3a11', target: 'f2034', label: 'inhibition', teeArrowHead: true, color: 'red' } },
       { data: { source: 'f7a5d', target: 'b35dd', label: 'stimulation', triangleArrowHead: true } },
-      { data: { source: '359.34066506506065 856.8051210974252', target: 'c2438', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: '569.7271676120155 667.0', target: 'c92b8', noArrowHead: true } },
-      { data: { source: 'c92b8', target: 'ecdc6', noArrowHead: true } },
-      { data: { source: 'b65a0', target: 'f53a1', label: 'Arrow', triangleArrowHead: true } },
+      { data: { source: 'c2438', target: '359.34066506506065 856.8051210974252', noArrowHead: true } },
+      { data: { source: '569.7271676120155 667.0', target: 'ecdc6', noArrowHead: true } },
+      { data: { source: 'ecdc6', target: 'add66', label: 'cleavage', triangleArrowHead: true } },
+      { data: { source: 'f53a1', target: 'b65a0', noArrowHead: true } },
       { data: { source: 'e8f99', target: '399.34066506506065 929.7618459465529', noArrowHead: true, haystackStyle: true } },
       { data: { source: '399.34066506506065 929.7618459465529', target: 'aecb5', noArrowHead: true, haystackStyle: true } },
       { data: { source: 'ea673', target: 'f91ef', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: 'd3117', target: 'aecb5', label: 'binding', veeArrowHead: true } },
       { data: { source: 'a5e7a', target: 'f2034', label: 'stimulation', triangleArrowHead: true } },
-      { data: { source: 'aecb5', target: 'b65a0', label: 'Arrow', triangleArrowHead: true } },
+      { data: { source: 'b65a0', target: 'aecb5', noArrowHead: true } },
       { data: { source: '661.4089571866612 689.1920437499999', target: 'ecdc6', noArrowHead: true } },
+      { data: { source: 'ecdc6', target: 'ea673', label: 'cleavage', triangleArrowHead: true } },
       { data: { source: 'e1a64', target: 'c1b78', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: 'd3e0c', target: 'b095d', label: 'stimulation', triangleArrowHead: true } },
       { data: { source: 'f53a1', target: 'd3117', label: 'Arrow', triangleArrowHead: true } },

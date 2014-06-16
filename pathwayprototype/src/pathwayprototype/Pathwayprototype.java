@@ -137,6 +137,9 @@ public class Pathwayprototype {
                     }
                     this.genesets.put(pathwayname,pathwaygenes);
                 }
+                else {
+                    System.out.println("unused genesets line: "+line);
+                }
                 line = br.readLine();
             }
         }
@@ -224,6 +227,9 @@ public class Pathwayprototype {
             
             for (final File fileEntry : folder.listFiles()) {
                 System.out.println(fileEntry.getName());
+                if (fileEntry.getName().equals("Hs_RANKL-RANK_Signaling_Pathway_WP2018_74133.gpml")) {
+                    System.out.println("reached RANKL pathway");
+                }
                 doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new InputSource(PATHWAYFOLDER+fileEntry.getName()));
                 xpath = XPathFactory.newInstance().newXPath();
                 nonGeneProductNodes = new HashMap<String,String>();
@@ -487,7 +493,7 @@ public class Pathwayprototype {
             }
         }
         
-        if (attributes!=null && attributes.getLength() > 0 && attributes.getNamedItem("GraphId")!=null) {
+        
             
             nodeText+=nodeTextStart;
             
@@ -514,10 +520,10 @@ public class Pathwayprototype {
                 nodeText+=isMutatedText;
             }
             
-            if (attributes.getNamedItem("Type")==null || !attributes.getNamedItem("Type").getNodeValue().equals("GeneProduct")) {
+            if (attributes.getNamedItem("Type")==null || (!attributes.getNamedItem("Type").getNodeValue().equals("GeneProduct") && !attributes.getNamedItem("Type").getNodeValue().equals("Protein") && !attributes.getNamedItem("Type").getNodeValue().equals("Rna"))) {
                 addToNonGeneProductNodes = true;
             }
-            else if (attributes.getNamedItem("Type").getNodeValue().equals("GeneProduct")) {
+            else if (attributes.getNamedItem("Type").getNodeValue().equals("GeneProduct") || attributes.getNamedItem("Type").getNodeValue().equals("Protein") || attributes.getNamedItem("Type").getNodeValue().equals("Rna")) {
                 addToGeneProductNodes = true;
             }
             
@@ -598,7 +604,6 @@ public class Pathwayprototype {
             }
             
             
-        }
         
         
         if (addToNonGeneProductNodes) {
@@ -644,6 +649,14 @@ public class Pathwayprototype {
             target = source;
             source = temp;
         }
+        else if (target.getAttributes().getNamedItem("ArrowHead")!=null) {
+            //find one with graphref
+            if (target.getAttributes().getNamedItem("GraphRef")!=null || target.getAttributes().getNamedItem("GraphId")!=null) {
+                Node temp = target;
+                target = source;
+                source = temp;
+            }
+        }
         
         String sourcetext = "      { data: { source: '";
         String targettext = "', target: '";
@@ -651,47 +664,114 @@ public class Pathwayprototype {
         String singlequote = "'", endlinetext = " } },", linebreak = "\n";
         String edgeText="";
         
-        Node anchor = edgeNode.getFirstChild();
-        while (anchor!=null && !anchor.getNodeName().equals("Anchor")) {
-            anchor = anchor.getNextSibling();
+        //if there are multiple points, no anchors/elbow.
+        Node nextPoint;
+        nodeChild = nodeChild.getNextSibling();
+        while (nodeChild!=null && !nodeChild.getNodeName().equals("Point")) {
+            nodeChild = nodeChild.getNextSibling();
         }
-        if (anchor!=null) {
-            if (anchor.getAttributes().getNamedItem("GraphID")==null && anchor.getAttributes().getNamedItem("GraphRef")==null && anchor.getAttributes().getNamedItem("Type")==null) {
-                ((Element) anchor).removeAttribute("Type");
-                ((Element) anchor).setAttribute("Anchor","true");
-                String anchorGraphID = getGraphRefID(anchor, nonGeneProductNodes, geneProducts, positionMap);
-                ((Element) anchor).setAttribute("GraphId",anchorGraphID);
+        nextPoint = nodeChild;
+        if (nextPoint!=null) {
+            //get anchorcount
+            Node anchorChild = edgeNode.getFirstChild();
+            while (anchorChild!=null && !anchorChild.getNodeName().equals("Anchor")) {
+                anchorChild = anchorChild.getNextSibling();
             }
-            edgeText+=makeEdgeText(edgeNode,source, anchor, nonGeneProductNodes, geneProducts);
-            edgeText+=linebreak;
-            edgeText+=makeEdgeText(edgeNode,anchor, target, nonGeneProductNodes, geneProducts);
-        }
-        else {
-            //check if elbow edge (perpendicular)
-            if (edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow") && this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes)!=null) {
-                //give elbow positioning
-                String elbowGraphID = this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes);
-                //need null check
-                String[] elbowCoordinates = elbowGraphID.split(" ");
-                //make a node for the elbow anchor
-                Element elbow = (Element) source.cloneNode(false);
-                elbow.setAttribute("X",elbowCoordinates[0]);
-                elbow.setAttribute("Y",elbowCoordinates[1]);
-                elbow.setAttribute("GraphId",elbowGraphID);
-                elbow.removeAttribute("GraphRef");
-                elbow.removeAttribute("Type");
-                elbow.setAttribute("Elbow","true");
-                if (target.getAttributes().getNamedItem("ArrowHead")!=null && target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("mim-inhibition")) {
-                    elbow.setAttribute("ArrowHead","inhibitorElbow");
+            //if greater than 0, then draw all points
+            
+            /*
+            while (nodeChild!=null && nodeChild.getNodeName().equals("Point")) {
+                if (nodeChild.getAttributes().getNamedItem("ArrowHead")!=null) {
+                    target = nodeChild;
                 }
-                elbow.setAttribute("TextLabel","");
-                edgeText+=makeEdgeText(edgeNode,source, elbow, nonGeneProductNodes, geneProducts);
-                edgeText+=linebreak;
-                edgeText+=makeEdgeText(edgeNode,elbow, target, nonGeneProductNodes, geneProducts);
-                //make sure elbow arms are red if part of an inhibition arrow
+                else if (nodeChild.getAttributes().getNamedItem("GraphRef")!=null) {
+                    source = nodeChild;
+                }
+                nodeChild = nodeChild.getNextSibling();
+                while (nodeChild!=null && !nodeChild.getNodeName().equals("Point")) {
+                    nodeChild = nodeChild.getNextSibling();
+                }
+                nextPoint = nodeChild;
+            }*/
+            Node nextNextPoint;
+            nodeChild = nodeChild.getNextSibling();
+            while (nodeChild!=null && !nodeChild.getNodeName().equals("Point")) {
+                nodeChild = nodeChild.getNextSibling();
+            }
+            nextNextPoint = nodeChild;
+            if (anchorChild == null && nextNextPoint == null && edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow")) {
+                if (target.getAttributes().getNamedItem("ArrowHead")==null && nextPoint.getAttributes().getNamedItem("ArrowHead")!=null) {
+                    Node temp = target;
+                    target = nextPoint;
+                    nextPoint = temp;
+                }
+                if (source.getAttributes().getNamedItem("GraphRef")==null && nextPoint.getAttributes().getNamedItem("GraphRef")!=null) {
+                    Node temp = source;
+                    source = nextPoint;
+                    nextPoint = temp;
+                }
+                edgeText+=makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
             }
             else {
-                edgeText += makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
+                Node prevPoint = target;
+                //make first source/target edge
+                edgeText+=makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
+                nodeChild = nextPoint;
+                while (nextPoint!=null) {
+                    //make edge from prevpoint to nextpoint
+                    edgeText+=linebreak+makeEdgeText(edgeNode,prevPoint, nextPoint, nonGeneProductNodes, geneProducts);
+                    prevPoint = nextPoint;
+                    nodeChild = nodeChild.getNextSibling();
+                    while (nodeChild!=null && !nodeChild.getNodeName().equals("Point")) {
+                        nodeChild = nodeChild.getNextSibling();
+                    }
+                    nextPoint = nodeChild;
+                }
+            }
+        }
+        else {
+            Node anchor = edgeNode.getFirstChild();
+            while (anchor!=null && !anchor.getNodeName().equals("Anchor")) {
+                anchor = anchor.getNextSibling();
+            }
+            if (anchor!=null) {
+                if (anchor.getAttributes().getNamedItem("GraphID")==null && anchor.getAttributes().getNamedItem("GraphRef")==null && anchor.getAttributes().getNamedItem("Type")==null) {
+                    ((Element) anchor).removeAttribute("Type");
+                    ((Element) anchor).setAttribute("Anchor","true");
+                    String anchorGraphID = getGraphRefID(anchor, nonGeneProductNodes, geneProducts, positionMap);
+                    ((Element) anchor).setAttribute("GraphId",anchorGraphID);
+                }
+                edgeText+=makeEdgeText(edgeNode,source, anchor, nonGeneProductNodes, geneProducts);
+                edgeText+=linebreak;
+                edgeText+=makeEdgeText(edgeNode,anchor, target, nonGeneProductNodes, geneProducts);
+            }
+            else {
+                //check if elbow edge (perpendicular)
+                if (edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow") && this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes)!=null) {
+                    //give elbow positioning
+                    String elbowGraphID = this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes);
+                    //need null check
+                    String[] elbowCoordinates = elbowGraphID.split(" ");
+                    //make a node for the elbow anchor
+                    Element elbow = (Element) source.cloneNode(false);
+                    elbow.setAttribute("X",elbowCoordinates[0]);
+                    elbow.setAttribute("Y",elbowCoordinates[1]);
+                    elbow.setAttribute("GraphId",elbowGraphID);
+                    elbow.removeAttribute("GraphRef");
+                    elbow.removeAttribute("Type");
+                    elbow.setAttribute("Elbow","true");
+                    if (target.getAttributes().getNamedItem("ArrowHead")!=null && (target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("mim-inhibition") || target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("TBar"))) {
+                        elbow.setAttribute("ArrowHead","inhibitorElbow");
+                    }
+                    elbow.setAttribute("TextLabel","");
+                    edgeText+=makeEdgeText(edgeNode,source, elbow, nonGeneProductNodes, geneProducts);
+                    edgeText+=linebreak;
+                    edgeText+=makeEdgeText(edgeNode,elbow, target, nonGeneProductNodes, geneProducts);
+                    //make sure elbow arms are red if part of an inhibition arrow
+                }
+                else {
+                    edgeText += makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
+                }
             }
         }
         
@@ -775,6 +855,7 @@ public class Pathwayprototype {
         String teeArrowHeadText = ", teeArrowHead: true";
         String singlequote = "'", endlinetext = " } },";
         String inhibitionString = "mim-inhibition";
+        String tbar = "TBar";
         String catalysisString = "mim-catalysis";
         String bindingString = "mim-binding";
         String inhibitorElbowText = "inhibitorElbow";
@@ -801,7 +882,7 @@ public class Pathwayprototype {
             if (arrowHeadType.equals(catalysisString)) {
                 edgeText+=circularArrowHeadText;
             }
-            else if (arrowHeadType.equals(inhibitionString)) {
+            else if (arrowHeadType.equals(inhibitionString) || arrowHeadType.equals(tbar)) {
                 edgeText+=teeArrowHeadText+redColorText;
             }
             else if (arrowHeadType.equals(bindingString)) {
@@ -830,14 +911,8 @@ public class Pathwayprototype {
         else if (node.getAttributes().getNamedItem("GraphId")!=null) {
             graphID = node.getAttributes().getNamedItem("GraphId").getTextContent().trim();
         }
-        else if (node.getAttributes().getNamedItem("X")!=null){
-            graphID = node.getAttributes().getNamedItem("X").getNodeValue() + " " + node.getAttributes().getNamedItem("Y").getNodeValue().trim();
-        }
-        else if (node.getAttributes().getNamedItem("CenterX")!=null) {
-            graphID = node.getAttributes().getNamedItem("X").getNodeValue() + " " + node.getAttributes().getNamedItem("Y").getNodeValue().trim();
-        }
         else {
-            graphID = node.getAttributes().getNamedItem("Position").getNodeValue();
+            graphID = getPositionGraphID(node);
         }
         //check centerx and figure out some defautl... maybe position
         if (!geneProducts.containsKey(graphID) && !nonGeneProductNodes.containsKey(graphID)) {
@@ -851,11 +926,60 @@ public class Pathwayprototype {
         }
         return graphID;
     }
+    private String getPositionGraphID(Node node) {
+        Node graphics = node.getFirstChild();
+        String graphID = "";
+        while (graphics!=null && graphics.getNodeName()!="Graphics"){
+            graphics = graphics.getNextSibling();
+        }
+        if (graphics==null) {
+            if (node.getAttributes().getNamedItem("X")!=null){
+                graphID = node.getAttributes().getNamedItem("X").getNodeValue() + " " + node.getAttributes().getNamedItem("Y").getNodeValue().trim();
+            }
+            else if (node.getAttributes().getNamedItem("CenterX")!=null) {
+                graphID = node.getAttributes().getNamedItem("CenterX").getNodeValue() + " " + node.getAttributes().getNamedItem("CenterY").getNodeValue().trim();
+            }
+            else {
+                System.out.println("there is no way of assigning an ID to this node.");
+            }
+        }
+        else {
+            if (graphics.getAttributes().getNamedItem("X")!=null){
+                graphID = graphics.getAttributes().getNamedItem("X").getNodeValue() + " " + graphics.getAttributes().getNamedItem("Y").getNodeValue().trim();
+            }
+            else if (graphics.getAttributes().getNamedItem("CenterX")!=null) {
+                graphID = (graphics.getAttributes().getNamedItem("CenterX").getNodeValue() + " " + graphics.getAttributes().getNamedItem("CenterY").getNodeValue()).trim();
+            }
+            else {
+                System.out.println("there is no way of assigning an ID to this node, but it has graphics.");
+            }
+        }
+        return graphID;
+    }
     private String getEdgeGraphRefID(Node node, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, HashMap<String,String> positionMap) {
         String graphID = getGraphRefID(node,nonGeneProductNodes, geneProducts, positionMap);
         if (!geneProducts.containsKey(graphID) && !nonGeneProductNodes.containsKey(graphID)) {
             ((Element) node).setAttribute("isPlacementNode","true");
             processNode(node,nonGeneProductNodes, geneProducts, this.positionMap);
+        }
+        else if (!this.positionMap.containsKey(graphID)) {
+            String singleQuote = "'";
+            String colon = ":";
+            String space = " ";
+            String startCurlyBrace = "{";
+            String endCurlyBrace = "}";
+            String x = "x: ", y = ", y: ";
+            NamedNodeMap attributes = node.getAttributes();
+            if (attributes.getNamedItem("CenterX")!=null && attributes.getNamedItem("CenterY")!=null) {
+                String xpos = attributes.getNamedItem("CenterX").getNodeValue();
+                String ypos = attributes.getNamedItem("CenterY").getNodeValue();
+                this.positionMap.put(graphID,singleQuote+graphID+singleQuote+colon+space+startCurlyBrace+x+xpos+y+ypos+endCurlyBrace);
+            }
+            else if (attributes.getNamedItem("X")!=null && attributes.getNamedItem("Y")!=null) {
+                String xpos = attributes.getNamedItem("X").getNodeValue();
+                String ypos = attributes.getNamedItem("Y").getNodeValue();
+                this.positionMap.put(graphID,singleQuote+graphID+singleQuote+colon+space+startCurlyBrace+x+xpos+y+ypos+endCurlyBrace);
+            }
         }
         return graphID;
     }
@@ -961,7 +1085,7 @@ public class Pathwayprototype {
             markeditems = commonGenes.size();
             commonGenes.retainAll(geneset);
             //see if there are common genes
-            if (commonGenes.size() > 0) {
+            //if (commonGenes.size() > 0) {
                 try {
                     h = new Hypergeometric(samplesize, populationsize, markeditems);
                     p = 1.0-h.cdf((double) commonGenes.size());
@@ -971,7 +1095,7 @@ public class Pathwayprototype {
                 catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
+            //}
         }
         
         //comparators.sort by cdf
@@ -1035,6 +1159,7 @@ public class Pathwayprototype {
                 if (nodes.getLength() >0){
                     writer.print("|"+nodes.item(0).getTextContent().replaceAll("\\n"," "));
                 }
+                HashSet<String> singlePathwayGenes = new HashSet<String>();
                 
                 xpathexpression = "/Pathway/DataNode[@Type='GeneProduct']";
                 nodes = (NodeList) xpath.evaluate(xpathexpression,doc,XPathConstants.NODESET);
@@ -1043,12 +1168,57 @@ public class Pathwayprototype {
                         geneNodeName = ((Element) nodes.item(counter)).getAttribute("TextLabel");
                         geneNames = geneNodeName.split("[\\/]|\\s");
                         for (int counter2 = 0; counter2<geneNames.length;counter2++) {
-                            if (geneNames[counter2].trim().length() != 0) {
-                                writer.print("\t"+geneNames[counter2]);
+                            geneNames[counter2] = geneNames[counter2].trim();
+                            //make sure there are no spaces and no lower case letters (indicative of a non-gene symbol)
+                            Pattern p = Pattern.compile("[^A-Z0-9-]");
+                            Matcher m = p.matcher(geneNames[counter2]);
+                            if (geneNames[counter2].length() != 0 && !m.find()) {
+                                singlePathwayGenes.add(geneNames[counter2]);
                             }
                         }
                     }
                 }
+                xpathexpression = "/Pathway/DataNode[@Type='Protein']";
+                nodes = (NodeList) xpath.evaluate(xpathexpression,doc,XPathConstants.NODESET);
+                for (int counter = 0; counter < nodes.getLength(); counter++) {
+                    if (nodes.item(counter).getNodeType()==Node.ELEMENT_NODE) {
+                        geneNodeName = ((Element) nodes.item(counter)).getAttribute("TextLabel");
+                        geneNames = geneNodeName.split("[\\/]|\\s");
+                        for (int counter2 = 0; counter2<geneNames.length;counter2++) {
+                            geneNames[counter2] = geneNames[counter2].trim();
+                            //make sure there are no spaces and no lower case letters (indicative of a non-gene symbol)
+                            Pattern p = Pattern.compile("[^A-Z0-9-]");
+                            Matcher m = p.matcher(geneNames[counter2]);
+                            if (geneNames[counter2].length() != 0 && !m.find()) {
+                                singlePathwayGenes.add(geneNames[counter2]);
+                            }
+                        }
+                    }
+                }
+                xpathexpression = "/Pathway/DataNode[@Type='Rna']";
+                nodes = (NodeList) xpath.evaluate(xpathexpression,doc,XPathConstants.NODESET);
+                for (int counter = 0; counter < nodes.getLength(); counter++) {
+                    if (nodes.item(counter).getNodeType()==Node.ELEMENT_NODE) {
+                        geneNodeName = ((Element) nodes.item(counter)).getAttribute("TextLabel");
+                        geneNames = geneNodeName.split("[\\/]|\\s");
+                        for (int counter2 = 0; counter2<geneNames.length;counter2++) {
+                            geneNames[counter2] = geneNames[counter2].trim();
+                            //make sure there are no spaces and no lower case letters (indicative of a non-gene symbol)
+                            Pattern p = Pattern.compile("[^A-Z0-9-]");
+                            Matcher m = p.matcher(geneNames[counter2]);
+                            if (geneNames[counter2].length() != 0 && !m.find()) {
+                                singlePathwayGenes.add(geneNames[counter2]);
+                            }
+                        }
+                    }
+                }
+                
+                //print genes into genesets file
+                Iterator it = singlePathwayGenes.iterator();
+                while (it.hasNext()) {
+                    writer.print("\t"+it.next());
+                }
+                
                 writer.println();
             }
             writer.close();
@@ -1070,12 +1240,21 @@ public class Pathwayprototype {
             
             Iterator enrichedGenes = commonGenes.iterator();
             
+            //if there aren't any enriched genes, copy GPML file over as-is
+            if (!enrichedGenes.hasNext()) {
+                 Path path = java.nio.file.Files.copy( 
+                       new java.io.File(WIKIPATHWAYSFOLDER + pathwayFileName).toPath(), 
+                       new java.io.File(GPMLOUTPUTFOLDER + pathwayFileName).toPath(),
+                       java.nio.file.StandardCopyOption.REPLACE_EXISTING,
+                       java.nio.file.StandardCopyOption.COPY_ATTRIBUTES,
+                       java.nio.file.LinkOption.NOFOLLOW_LINKS );
+            }
             
             while (enrichedGenes.hasNext()) {
                 
                 gene = (String) enrichedGenes.next();
                 gene = gene.trim();
-                String xpathexpression = "/Pathway/DataNode[contains(@TextLabel,'"+gene+"') and @Type='GeneProduct']";
+                String xpathexpression = "/Pathway/DataNode[contains(@TextLabel,'"+gene+"') and (@Type='GeneProduct' or @Type='Protein' or @Type='Rna')]";
                 NodeList nodes = (NodeList) xpath.evaluate(xpathexpression,doc,XPathConstants.NODESET);
                 boolean found = false;
                 for (int counter = 0; counter < nodes.getLength(); counter++) {
