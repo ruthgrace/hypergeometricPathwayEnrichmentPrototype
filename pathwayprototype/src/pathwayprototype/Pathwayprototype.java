@@ -37,6 +37,8 @@ public class Pathwayprototype {
     private Set<String> effectset;
     private HashMap genesets;
     private HashMap<String,String> positionMap;
+    final int START_ELBOW_HORIZONTAL = 0;
+    final int START_ELBOW_VERTICAL = 1;
     final String GENE_REGEX="HGVS=([^:^(]*)";
     final String EFFECT_REGEX = "EFFECT=([^;]*)";
     final String TESTFILE1 = "src/resources/annotatedVCF/WGS-001-03.gatk.snp.indel.jv.vcf";
@@ -636,27 +638,14 @@ public class Pathwayprototype {
         while (!nodeChild.getNodeName().equals("Point")) {
             nodeChild = nodeChild.getNextSibling();
         }
-        target = nodeChild;
+        source = nodeChild;
         nodeChild = nodeChild.getNextSibling();
         while (!nodeChild.getNodeName().equals("Point")) {
             nodeChild = nodeChild.getNextSibling();
         }
-        source = nodeChild;
+        target = nodeChild;
         
-        //correct assignment of points as Source and Target of edge - targets have arrowheads
-        if (source.getAttributes().getNamedItem("ArrowHead")!=null) {
-            Node temp = target;
-            target = source;
-            source = temp;
-        }
-        else if (target.getAttributes().getNamedItem("ArrowHead")!=null) {
-            //find one with graphref
-            if (target.getAttributes().getNamedItem("GraphRef")!=null || target.getAttributes().getNamedItem("GraphId")!=null) {
-                Node temp = target;
-                target = source;
-                source = temp;
-            }
-        }
+        
         
         String sourcetext = "      { data: { source: '";
         String targettext = "', target: '";
@@ -672,46 +661,31 @@ public class Pathwayprototype {
         }
         nextPoint = nodeChild;
         if (nextPoint!=null) {
-            //get anchorcount
-            Node anchorChild = edgeNode.getFirstChild();
-            while (anchorChild!=null && !anchorChild.getNodeName().equals("Anchor")) {
-                anchorChild = anchorChild.getNextSibling();
-            }
-            //if greater than 0, then draw all points
-            
-            /*
-            while (nodeChild!=null && nodeChild.getNodeName().equals("Point")) {
-                if (nodeChild.getAttributes().getNamedItem("ArrowHead")!=null) {
-                    target = nodeChild;
-                }
-                else if (nodeChild.getAttributes().getNamedItem("GraphRef")!=null) {
-                    source = nodeChild;
-                }
-                nodeChild = nodeChild.getNextSibling();
-                while (nodeChild!=null && !nodeChild.getNodeName().equals("Point")) {
+            // determine startelbowdir
+            if (edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow")) {
+                boolean startVertical = true;
+                Node prevPoint = target;
+                //make first source/target edge
+                edgeText += getElbowEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts, startVertical);
+                nodeChild = nextPoint;
+                startVertical = !startVertical;
+                while (nextPoint!=null) {
+                    //make edge from prevpoint to nextpoint
+                    edgeText+=linebreak+getElbowEdgeText(edgeNode,prevPoint, nextPoint, nonGeneProductNodes, geneProducts, startVertical);
+                    prevPoint = nextPoint;
+                    startVertical = !startVertical;
                     nodeChild = nodeChild.getNextSibling();
+                    while (nodeChild!=null && !nodeChild.getNodeName().equals("Point")) {
+                        nodeChild = nodeChild.getNextSibling();
+                    }
+                    nextPoint = nodeChild;
                 }
-                nextPoint = nodeChild;
-            }*/
-            Node nextNextPoint;
-            nodeChild = nodeChild.getNextSibling();
-            while (nodeChild!=null && !nodeChild.getNodeName().equals("Point")) {
-                nodeChild = nodeChild.getNextSibling();
+                
+                
+                
+                
             }
-            nextNextPoint = nodeChild;
-            if (anchorChild == null && nextNextPoint == null && edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow")) {
-                if (target.getAttributes().getNamedItem("ArrowHead")==null && nextPoint.getAttributes().getNamedItem("ArrowHead")!=null) {
-                    Node temp = target;
-                    target = nextPoint;
-                    nextPoint = temp;
-                }
-                if (source.getAttributes().getNamedItem("GraphRef")==null && nextPoint.getAttributes().getNamedItem("GraphRef")!=null) {
-                    Node temp = source;
-                    source = nextPoint;
-                    nextPoint = temp;
-                }
-                edgeText+=makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
-            }
+            //if nto elbow, just generate edges
             else {
                 Node prevPoint = target;
                 //make first source/target edge
@@ -728,9 +702,16 @@ public class Pathwayprototype {
                     nextPoint = nodeChild;
                 }
             }
+            
         }
         else {
-            Node anchor = edgeNode.getFirstChild();
+            //correct assignment of points as Source and Target of edge - targets have arrowheads
+            if (source.getAttributes().getNamedItem("ArrowHead")!=null) {
+                Node temp = target;
+                target = source;
+                source = temp;
+            }
+            /*Node anchor = edgeNode.getFirstChild();
             while (anchor!=null && !anchor.getNodeName().equals("Anchor")) {
                 anchor = anchor.getNextSibling();
             }
@@ -745,39 +726,54 @@ public class Pathwayprototype {
                 edgeText+=linebreak;
                 edgeText+=makeEdgeText(edgeNode,anchor, target, nonGeneProductNodes, geneProducts);
             }
-            else {
+            else {*/
                 //check if elbow edge (perpendicular)
                 if (edgeNode.getAttributes().getNamedItem("ConnectorType")!=null && edgeNode.getAttributes().getNamedItem("ConnectorType").getNodeValue().equals("Elbow") && this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes)!=null) {
-                    //give elbow positioning
-                    String elbowGraphID = this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes);
-                    //need null check
-                    String[] elbowCoordinates = elbowGraphID.split(" ");
-                    //make a node for the elbow anchor
-                    Element elbow = (Element) source.cloneNode(false);
-                    elbow.setAttribute("X",elbowCoordinates[0]);
-                    elbow.setAttribute("Y",elbowCoordinates[1]);
-                    elbow.setAttribute("GraphId",elbowGraphID);
-                    elbow.removeAttribute("GraphRef");
-                    elbow.removeAttribute("Type");
-                    elbow.setAttribute("Elbow","true");
-                    if (target.getAttributes().getNamedItem("ArrowHead")!=null && (target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("mim-inhibition") || target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("TBar"))) {
-                        elbow.setAttribute("ArrowHead","inhibitorElbow");
-                    }
-                    elbow.setAttribute("TextLabel","");
-                    edgeText+=makeEdgeText(edgeNode,source, elbow, nonGeneProductNodes, geneProducts);
-                    edgeText+=linebreak;
-                    edgeText+=makeEdgeText(edgeNode,elbow, target, nonGeneProductNodes, geneProducts);
-                    //make sure elbow arms are red if part of an inhibition arrow
+                    edgeText += getElbowEdgeText(edgeNode, source, target, nonGeneProductNodes, geneProducts, false);
                 }
                 else {
                     edgeText += makeEdgeText(edgeNode,source, target, nonGeneProductNodes, geneProducts);
                 }
-            }
+           // }
         }
-        
+        if (edgeText.contains("[Point: null]")) {
+            System.out.println("null node found");
+        }
         return edgeText;
     }
+    private String getElbowEdgeText (Node edgeNode, Node source, Node target, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, boolean startVertical) {
+        String elbowEdgeText="";
+        String linebreak = "\n";
+        Node elbow = makeElbow(edgeNode,source, target, nonGeneProductNodes, geneProducts, startVertical);
+        elbowEdgeText += makeEdgeText(edgeNode,source, elbow, nonGeneProductNodes, geneProducts);
+        elbowEdgeText += linebreak + makeEdgeText(edgeNode,elbow, target, nonGeneProductNodes, geneProducts);
+        return elbowEdgeText;
+    }
+    private Node makeElbow(Node edgeNode, Node source, Node target, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, boolean startVertical) {
+        
+        //give elbow positioning
+        String elbowGraphID = this.getElbowCoordinates(source, target, geneProducts, nonGeneProductNodes, startVertical);
+        //need null check
+        String[] elbowCoordinates = elbowGraphID.split(" ");
+        //make a node for the elbow anchor
+        Element elbow = (Element) source.cloneNode(false);
+        elbow.setAttribute("X",elbowCoordinates[0]);
+        elbow.setAttribute("Y",elbowCoordinates[1]);
+        elbow.setAttribute("GraphId",elbowGraphID);
+        elbow.removeAttribute("GraphRef");
+        elbow.removeAttribute("Type");
+        elbow.setAttribute("Elbow","true");
+        if (target.getAttributes().getNamedItem("ArrowHead")!=null && (target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("mim-inhibition") || target.getAttributes().getNamedItem("ArrowHead").getNodeValue().equals("TBar"))) {
+            elbow.setAttribute("ArrowHead","inhibitorElbow");
+        }
+        elbow.setAttribute("TextLabel","");
+        return (Node) elbow;
+        
+    }
     private String getElbowCoordinates(Node source, Node target, HashMap<String,String> geneProductNodes, HashMap<String,String> nonGeneProductNodes) {
+        return getElbowCoordinates(source, target, geneProductNodes, nonGeneProductNodes, false);
+    }
+    private String getElbowCoordinates(Node source, Node target, HashMap<String,String> geneProductNodes, HashMap<String,String> nonGeneProductNodes, boolean startVertical) {
         String coordinates = "";
         String sourceID, targetID;  
         if (source.getAttributes().getNamedItem("GraphId")!=null) {
@@ -799,8 +795,23 @@ public class Pathwayprototype {
             targetID = null;
         }
         
-        String nodeText = positionMap.get(targetID);
-        if (targetID!=null && nodeText!=null) {
+        String getXPosID, getYPosID;
+        Node getXPosNode, getYPosNode;
+        if (startVertical) {
+            getXPosID = sourceID;
+            getXPosNode = source;
+            getYPosID = targetID;
+            getYPosNode = target;
+        }
+        else {
+            getXPosID = targetID;
+            getXPosNode = target;
+            getYPosID = sourceID;
+            getYPosNode = source;
+        }
+        
+        String nodeText = positionMap.get(getXPosID);
+        if (getXPosID!=null && nodeText!=null) {
             //regex extract
             String regEx = "x:([^,]*),";
             Pattern p;
@@ -811,18 +822,18 @@ public class Pathwayprototype {
                 coordinates+=m.group(1).trim();
             }
         }
-        else if (target.getAttributes().getNamedItem("X")!= null) {
-            coordinates+=target.getAttributes().getNamedItem("X").getNodeValue();
+        else if (getXPosNode.getAttributes().getNamedItem("X")!= null) {
+            coordinates+=getXPosNode.getAttributes().getNamedItem("X").getNodeValue();
         }
-        else if (target.getAttributes().getNamedItem("CenterX") != null) {
-            coordinates+=target.getAttributes().getNamedItem("CenterX").getNodeValue();
+        else if (getXPosNode.getAttributes().getNamedItem("CenterX") != null) {
+            coordinates+=getXPosNode.getAttributes().getNamedItem("CenterX").getNodeValue();
         }
         else {
             return null;
         }
         coordinates+=" ";
-        nodeText = positionMap.get(sourceID);
-        if (sourceID!=null && nodeText!=null) {
+        nodeText = positionMap.get(getYPosID);
+        if (getYPosID!=null && nodeText!=null) {
             //regex extract
             String regEx = "y:([^}]*)}";
             Pattern p;
@@ -833,11 +844,11 @@ public class Pathwayprototype {
                 coordinates+=m.group(1).trim();
             }
         }
-        else if (source.getAttributes().getNamedItem("Y")!= null) {
-            coordinates+=source.getAttributes().getNamedItem("Y").getNodeValue();
+        else if (getYPosNode.getAttributes().getNamedItem("Y")!= null) {
+            coordinates+=getYPosNode.getAttributes().getNamedItem("Y").getNodeValue();
         }
-        else if (source.getAttributes().getNamedItem("CenterY")!=null) {
-            coordinates+=source.getAttributes().getNamedItem("CenterY").getNodeValue();
+        else if (getYPosNode.getAttributes().getNamedItem("CenterY")!=null) {
+            coordinates+=getYPosNode.getAttributes().getNamedItem("CenterY").getNodeValue();
         }
         else {
             return null;
@@ -901,6 +912,7 @@ public class Pathwayprototype {
         edgeText+=endlinetext;
         return edgeText;
     }
+    
     private String getGraphRefID(Node node, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, HashMap<String,String> positionMap) {
         String graphID;
         boolean newNonGeneProduct = false;
@@ -957,6 +969,9 @@ public class Pathwayprototype {
         return graphID;
     }
     private String getEdgeGraphRefID(Node node, HashMap<String,String> nonGeneProductNodes, HashMap<String,String> geneProducts, HashMap<String,String> positionMap) {
+        if (node == null) {
+            System.out.println("tried to find graphID of null node");
+        }
         String graphID = getGraphRefID(node,nonGeneProductNodes, geneProducts, positionMap);
         if (!geneProducts.containsKey(graphID) && !nonGeneProductNodes.containsKey(graphID)) {
             ((Element) node).setAttribute("isPlacementNode","true");

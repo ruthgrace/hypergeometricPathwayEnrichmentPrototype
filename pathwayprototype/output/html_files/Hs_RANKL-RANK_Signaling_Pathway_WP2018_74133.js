@@ -61,8 +61,8 @@ $('#cy').cytoscape({
 , 'cce62': {x: 769.5316283868125, y: 1223.5238095238085}
 , 'ea6': {x: 216.66666666666666, y: 270.0}
 , 'd1c': {x: 480.0, y: 413.3333333333333}
-, 'dbc': {x: 1283.3333333333333, y: 220.0}
 , 'f40c4': {x: 313.0, y: 481.0}
+, 'dbc': {x: 1283.3333333333333, y: 220.0}
 , 'c1f': {x: 1166.6666666666667, y: 183.33333333333334}
 , 'adc5d': {x: 736.1982950534795, y: 1185.8969430417526}
 , 'de908': {x: 70.68881856540082, y: 953.5}
@@ -86,6 +86,7 @@ $('#cy').cytoscape({
 , '473.0 1222.0': {x: 473.0, y: 1222.0}
 , 'dd9': {x: 900.0, y: 914.6666666666666}
 , 'c25': {x: 1186.6666666666667, y: 800.0}
+, '298.0218329306179 481.0': {x: 298.0218329306179, y: 481.0}
 , 'c1495': {x: 730.9999999999964, y: 731.8597491448065}
 , 'd0b': {x: 1140.0, y: 223.33333333333334}
 , 'fc9': {x: 326.6666666666667, y: 926.6666666666666}
@@ -142,6 +143,7 @@ $('#cy').cytoscape({
 , 'bd0': {x: 90.0, y: 806.6666666666666}
 , 'abc': {x: 90.0, y: 826.6666666666666}
 , 'e91': {x: 146.66666666666666, y: 486.6666666666667}
+, '110.93881856540082 426.0': {x: 110.93881856540082, y: 426.0}
 , 'e7f': {x: 1126.6666666666667, y: 210.0}
 , '686.9999999999964 872.5024647292369': {x: 686.9999999999964, y: 872.5024647292369}
 , 'e7b': {x: 1183.3333333333333, y: 173.33333333333334}
@@ -206,6 +208,7 @@ $('#cy').cytoscape({
 , 'fd2d9': {x: 677.9999999999965, y: 1186.5238095238071}
 , 'b40d7': {x: 313.8333333333335, y: 837.5}
 , '629.9999999999969 990.9999999999945': {x: 629.9999999999969, y: 990.9999999999945}
+, '344.75 623.0': {x: 344.75, y: 623.0}
 , '193.5 1420.0': {x: 193.5, y: 1420.0}
 , 'd36d1': {x: 70.93881856540082, y: 796.0}
 , 'd0cf3': {x: 228.10994397759129, y: 982.5588235294122}
@@ -223,17 +226,20 @@ $('#cy').cytoscape({
 , 'af1': {x: 903.3333333333334, y: 210.0}
 , 'af4': {x: 656.6666666666666, y: 320.0}
 , 'af3': {x: 326.6666666666667, y: 806.6666666666666}
+, '136.09153674958844 426.0': {x: 136.09153674958844, y: 426.0}
 , '686.9999999999964 892.6570196866903': {x: 686.9999999999964, y: 892.6570196866903}
 , 'af96c': {x: 313.5436658612358, y: 481.0}
 , 'f0e9c': {x: 313.5, y: 1248.0}
 , 'cae70': {x: 655.6533496707339, y: 554.9288583797635}
 , '433.0 1222.0': {x: 433.0, y: 1222.0}
 , 'db738': {x: 817.0290220991437, y: 694.9999999999955}
+, '384.81372228369264 760.0': {x: 384.81372228369264, y: 760.0}
 , 'c8ad5': {x: 657.6666666666642, y: 1044.29862136878}
 , 'd7c1e': {x: 817.7485203887675, y: 646.9999999999964}
 , 'fb220': {x: 393.0, y: 642.5}
 , 'af5': {x: 460.0, y: 973.3333333333334}
 , 'c4e30': {x: 687.0, y: 252.0}
+, '282.5 481.0': {x: 282.5, y: 481.0}
 , '686.9999999999964 812.6593972779065': {x: 686.9999999999964, y: 812.6593972779065}
 , '681.9999999999964 718.9999999999939': {x: 681.9999999999964, y: 718.9999999999939}
 , 'e2a2c': {x: 246.83333333333348, y: 1126.0}
@@ -273,11 +279,13 @@ $('#cy').cytoscape({
 , 'f27': {x: 126.66666666666667, y: 183.33333333333334}
 , 'f28': {x: 90.0, y: 1003.3333333333334}
 , 'adaf1': {x: 313.3333333333335, y: 943.0}
+, '313.41666666666674 760.0': {x: 313.41666666666674, y: 760.0}
 , 'a1f36': {x: 157.77138715341584, y: 1302.2397203031649}
 , 'e1d': {x: 203.33333333333334, y: 903.3333333333334}
 , 'e1e': {x: 1184.9166666666667, y: 392.6666666666667}
 , 'e1f': {x: 1150.0, y: 210.0}
 , 'edae8': {x: 328.3333333333335, y: 1182.0}
+, '419.1568611418463 760.0': {x: 419.1568611418463, y: 760.0}
 , 'ca6': {x: 600.0, y: 453.3333333333333}
 , 'db8f8': {x: 747.7961394363865, y: 872.9999999999945}
 , '684.6666666666642 686.79862136878': {x: 684.6666666666642, y: 686.79862136878}
@@ -288,6 +296,7 @@ $('#cy').cytoscape({
 , 'e2e87': {x: 282.5, y: 535.0}
 , 'f80': {x: 326.6666666666667, y: 786.6666666666666}
 , 'fc960': {x: 135.95786118440114, y: 730.260504201683}
+, '313.0 623.0': {x: 313.0, y: 623.0}
 , '627.999999999997 603.9999999999964': {x: 627.999999999997, y: 603.9999999999964}
 , 'f6a': {x: 90.0, y: 860.0}
 , 'f15f7': {x: 228.66036414565866, y: 820.7226890756294}
@@ -310,6 +319,7 @@ $('#cy').cytoscape({
 , 'b15ef': {x: 884.4999999999964, y: 513.4652880354469}
 , 'f28c4': {x: 758.3437584840058, y: 952.2805017103708}
 , 'dd262': {x: 84.93881856540082, y: 1302.021008403363}
+, '453.5 760.0': {x: 453.5, y: 760.0}
 , 'e2be3': {x: 135.5, y: 602.5}
 , 'a6c': {x: 203.33333333333334, y: 746.6666666666666}
 , 'f53': {x: 566.6666666666666, y: 786.6666666666666}
@@ -329,8 +339,8 @@ $('#cy').cytoscape({
 , 'e68': {x: 656.6666666666666, y: 220.0}
 , 'a63f3': {x: 84.43881856540082, y: 1128.0}
 , 'f62': {x: 326.6666666666667, y: 906.6666666666666}
-, 'f63': {x: 146.66666666666666, y: 426.6666666666667}
 , '357.1108193277312 760.0': {x: 357.1108193277312, y: 760.0}
+, 'f63': {x: 146.66666666666666, y: 426.6666666666667}
 , 'e69': {x: 810.0, y: 243.33333333333334}
 , 'd4144': {x: 741.4389965792438, y: 931.9999999999945}
 , '628.999999999997 792.6593972779065': {x: 628.999999999997, y: 792.6593972779065}
@@ -345,6 +355,7 @@ $('#cy').cytoscape({
 , 'a300f': {x: 727.3437584840058, y: 968.8597491448064}
 , 'eac5c': {x: 734.3437584840058, y: 812.9999999999945}
 , 'a91': {x: 901.6666666666666, y: 648.6666666666666}
+, '463.0 426.0': {x: 463.0, y: 426.0}
 , 'd17f1': {x: 751.0792474344316, y: 1013.9999999999944}
 , '686.9999999999964 912.6570196866903': {x: 686.9999999999964, y: 912.6570196866903}
 , 'c56': {x: 266.6666666666667, y: 366.6666666666667}
@@ -353,8 +364,10 @@ $('#cy').cytoscape({
 , 'c54': {x: 853.3333333333334, y: 363.3333333333333}
 , 'b7ab7': {x: 657.6666666666642, y: 1010.79862136878}
 , 'c55': {x: 480.0, y: 393.3333333333333}
+, '313.41666666666674 760.4355716878403': {x: 313.41666666666674, y: 760.4355716878403}
 , '246.33333333333348 1152.0': {x: 246.33333333333348, y: 1152.0}
 , 'ae15d': {x: 274.5, y: 205.0}
+, '386.59663865546224 760.0': {x: 386.59663865546224, y: 760.0}
 , 'd56': {x: 203.33333333333334, y: 923.3333333333334}
 , '228.0 1340.0': {x: 228.0, y: 1340.0}
 , 'd4c': {x: 600.0, y: 473.3333333333333}
@@ -387,8 +400,9 @@ $('#cy').cytoscape({
 , 'c5d': {x: 566.6666666666666, y: 866.6666666666666}
 , 'c5f9c': {x: 135.95786118440114, y: 750.8613445378171}
 , '686.9999999999964 932.6570196866903': {x: 686.9999999999964, y: 932.6570196866903}
-, 'b5b': {x: 1186.6666666666667, y: 880.0}
+, '161.2442549337761 426.0': {x: 161.2442549337761, y: 426.0}
 , '313.0 866.0': {x: 313.0, y: 866.0}
+, 'b5b': {x: 1186.6666666666667, y: 880.0}
 , 'a67': {x: 869.0, y: 413.6666666666667}
 , 'b5a': {x: 600.0, y: 513.3333333333334}
 , 'cfa': {x: 1216.6666666666667, y: 213.33333333333334}
@@ -401,6 +415,7 @@ $('#cy').cytoscape({
 , 'a74cc': {x: 153.49427073586716, y: 912.5685213116403}
 , 'a204f': {x: 816.30952380952, y: 672.9999999999959}
 , 'd75': {x: 1183.3333333333333, y: 186.66666666666666}
+, '362.5 623.0': {x: 362.5, y: 623.0}
 , 'a2f': {x: 1226.6666666666667, y: 203.33333333333334}
 , 'c2b': {x: 656.6666666666666, y: 340.0}
 , '85.0 1136.0': {x: 85.0, y: 1136.0}
@@ -410,6 +425,7 @@ $('#cy').cytoscape({
 , '204.40336134453776 687.0420168067227': {x: 204.40336134453776, y: 687.0420168067227}
 , 'cee': {x: 600.0, y: 493.3333333333333}
 , 'd3f0c': {x: 230.5, y: 426.0}
+, '263.93434873949604 760.4355716878403': {x: 263.93434873949604, y: 760.4355716878403}
 , '70.12095639943743 464.25035161744023': {x: 70.12095639943743, y: 464.25035161744023}
 , 'a53': {x: 1176.6666666666667, y: 250.0}
 , 'ed5af': {x: 742.9389965792438, y: 911.7194982896183}
@@ -437,11 +453,13 @@ $('#cy').cytoscape({
 , 'ceb8f': {x: 747.3835586686179, y: 1239.3835586686212}
 , 'b10': {x: 1256.6666666666667, y: 253.33333333333334}
 , 'c8e': {x: 600.0, y: 573.3333333333334}
+, '313.5436658612358 481.0': {x: 313.5436658612358, y: 481.0}
 , 'f71b6': {x: 344.0, y: 535.0}
 , 'c48cf': {x: 417.25, y: 1427.5}
 , 'b1a': {x: 536.6666666666666, y: 260.0}
 , '648.9999999999964 686.4652880354461': {x: 648.9999999999964, y: 686.4652880354461}
 , 'f06': {x: 810.0, y: 223.33333333333334}
+, '155.5 426.0': {x: 155.5, y: 426.0}
 , 'b20': {x: 146.66666666666666, y: 356.6666666666667}
 , 'f00': {x: 240.0, y: 100.0}
 , '628.999999999997 912.6570196866903': {x: 628.999999999997, y: 912.6570196866903}
@@ -453,10 +471,12 @@ $('#cy').cytoscape({
 , 'dc6f1': {x: 399.4680843589353, y: 426.0}
 , 'ecbcb': {x: 678.9999999999965, y: 1145.5238095238064}
 , '402.0 1160.0': {x: 402.0, y: 1160.0}
+, '344.0 481.0': {x: 344.0, y: 481.0}
 , 'dcb34': {x: 313.0, y: 426.0}
 , 'b2e': {x: 1293.3333333333333, y: 233.33333333333334}
 , 'fca4e': {x: 386.8643042350908, y: 1083.2713915298184}
 , 'c6e': {x: 216.66666666666666, y: 210.0}
+, '228.66036414565866 760.4355716878403': {x: 228.66036414565866, y: 760.4355716878403}
 , '328.3333333333335 1145.0': {x: 328.3333333333335, y: 1145.0}
 , 'e41bd': {x: 728.9999999999964, y: 557.4652880354461}
 , 'cb8bc': {x: 501.0, y: 985.0}
@@ -683,220 +703,256 @@ elements: {
       { data: { id: 'fca4e', parent: 'superparent', name: 'NFKB2', isMutated: true, width: 50.0, height: 20.0} },
       { data: { id: 'ee8db', parent: 'superparent', name: 'NFKB2', isMutated: true, width: 50.0, height: 20.0} },
       { data: { id: 'cd3ac', parent: 'superparent', name: 'RELB', isMutated: true, width: 50.0, height: 20.0} },
-      { data: { id: '656.6666666666642 630.79862136878', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'bb660', parent: 'superparent', name: 'LEGEND', isLabel: true, width: 80.0, height: 20.0} },
-      { data: { id: 'd17f1', parent: 'superparent', name: 'Induced catalysis', isLabel: true, width: 111.0, height: 20.0} },
-      { data: { id: 'b9e2c', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '686.9999999999964 912.6570196866903', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '656.6666666666642 630.79862136878', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '271.0 362.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'b7ab7', parent: 'superparent', name: 'Protein', isLabel: true, width: 60.0, height: 20.0} },
-      { data: { id: '686.9999999999964 852.6582084822985', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '307.0 1002.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '246.33333333333348 1152.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '686.9999999999964 872.5024647292369', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'ae15d', parent: 'superparent', name: 'RANKL/RANK Signaling Pathway', isLabel: true, width: 341.0, height: 28.0} },
-      { data: { id: 'cd647', parent: 'superparent', name: 'Dephosphorylation', isLabel: true, width: 127.0, height: 20.0} },
-      { data: { id: 'a2df1', parent: 'superparent', name: 'ROS', isMetabolite: true, width: 50.0, height: 20.0} },
-      { data: { id: '124.0 1342.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '228.0 1340.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '686.9999999999964 852.6582084822985', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'ea094', parent: 'superparent', name: 'Molecule', shape: 'ellipse', width: 59.0, height: 19.113585746102444} },
-      { data: { id: '686.9999999999964 832.5036535248448', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '217.0 464.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '693.9999999999964 970.9999999999945', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '162.0 914.0925589836661', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '627.999999999997 831.9999999999945', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '628.999999999997 752.6593972779065', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'db2c6', parent: 'superparent', name: 'Protein-protein interaction', isLabel: true, width: 172.66666666666663, height: 20.0} },
-      { data: { id: '246.33333333333348 1174.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '628.999999999997 752.6593972779065', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '627.999999999997 831.9999999999945', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'e6a91', parent: 'superparent', name: '', shape: 'ellipse', width: 14.0, height: 14.0} },
       { data: { id: 'f341c', parent: 'superparent', name: 'Protein - protein dissociation', isLabel: true, width: 186.0, height: 13.0} },
-      { data: { id: '85.43881856540082 1147.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'e1d17', parent: 'superparent', name: 'CY', isLabel: true, width: 22.333333333333332, height: 16.0} },
-      { data: { id: 'f45b0', parent: 'superparent', name: 'NU', isLabel: true, width: 30.0, height: 20.0} },
-      { data: { id: '683.4546258735204 1099.0266446873065', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'b218e', parent: 'superparent', name: 'Cytoplasm', isLabel: true, width: 71.33333333333333, height: 16.0} },
-      { data: { id: 'b4444', parent: 'superparent', name: 'Plasma membrane', isLabel: true, width: 120.66666666666674, height: 16.0} },
-      { data: { id: '314.0 593.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '453.0 1220.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'b4444', parent: 'superparent', name: 'Plasma membrane', isLabel: true, width: 120.66666666666674, height: 16.0} },
+      { data: { id: 'b218e', parent: 'superparent', name: 'Cytoplasm', isLabel: true, width: 71.33333333333333, height: 16.0} },
       { data: { id: 'c54b5', parent: 'superparent', name: '', shape: 'rectangle', width: 355.0, height: 825.0} },
-      { data: { id: 'a76aa', parent: 'superparent', name: 'NU', isLabel: true, width: 30.0, height: 20.0} },
-      { data: { id: 'fab40', parent: 'superparent', name: 'Translocation', isLabel: true, width: 92.0, height: 20.0} },
-      { data: { id: '628.999999999997 871.9999999999945', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'f58bb', parent: 'superparent', name: 'CY', isLabel: true, width: 28.0, height: 20.0} },
       { data: { id: '646.9999999999964 686.4652880354461', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '686.9999999999964 932.6570196866903', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '376.5 316.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
       { data: { id: '417.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '386.0 1339.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '313.0 866.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '189.0 465.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'd8839', parent: 'superparent', name: '', shape: 'arc', width: 30.0, height: 31.0} },
       { data: { id: 'c1f2c', parent: 'superparent', name: 'Desumoylation', isLabel: true, width: 99.0, height: 20.0} },
       { data: { id: '628.999999999997 952.6570196866903', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'ea726', parent: 'superparent', name: 'Protein', isLabel: true, width: 60.0, height: 20.0} },
-      { data: { id: '453.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'dfdd1', parent: 'superparent', name: 'Transport', isLabel: true, width: 66.0, height: 20.0} },
-      { data: { id: 'a456b', parent: 'superparent', name: 'Methylation', isLabel: true, width: 75.0, height: 20.0} },
-      { data: { id: '628.999999999997 970.9999999999945', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '399.5 426.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
-      { data: { id: 'a74cc', parent: 'superparent', name: '', shape: 'arc', width: 15.678381338062, height: 31.733599350666836} },
-      { data: { id: '84.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'a204f', parent: 'superparent', name: 'Positive regulation of gene expression', isLabel: true, width: 247.0, height: 20.0} },
+      { data: { id: '628.999999999997 970.9999999999945', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'a0b07', parent: 'superparent', name: 'Ubiquitination', isLabel: true, width: 93.66666666666663, height: 20.0} },
       { data: { id: 'a2ed1', parent: 'superparent', name: 'Ligand', isLabel: true, width: 60.0, height: 20.0} },
-      { data: { id: '687.9999999999964 991.5012759336287', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'de20e', parent: 'superparent', name: 'Deacetylation', isLabel: true, width: 89.0, height: 20.0} },
-      { data: { id: 'f6c2c', parent: 'superparent', name: 'Endosome', isLabel: true, width: 71.33333333333333, height: 16.0} },
-      { data: { id: '85.0 1136.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '433.0 1223.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '246.33333333333348 1165.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '686.9999999999964 772.6593972779065', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '157.0 1339.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '628.999999999997 731.9999999999945', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '685.9999999999964 603.9999999999964', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '204.40336134453776 687.0420168067227', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '70.12095639943743 464.25035161744023', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'a4ef9', parent: 'superparent', name: 'Osteoclastogenesis', isLabel: true, width: 120.1382886776144, height: 27.657735522903913} },
-      { data: { id: '683.4837201898356 1133.0887265873953', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'ed5af', parent: 'superparent', name: 'Demethylation', isLabel: true, width: 93.0, height: 20.0} },
       { data: { id: '675.3333333333298 712.3333333333275', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '685.6666666666642 625.79862136878', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '501.0 1130.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '402.3333333333335 1145.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'd1a43', parent: 'superparent', name: '', placementNode: true, anchor: true} },
-      { data: { id: '430.0 465.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '313.41666666666674 760.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: 'd1a43', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'b3270', parent: 'superparent', name: 'EN', isLabel: true, width: 22.333333333333332, height: 16.0} },
       { data: { id: 'cce62', parent: 'superparent', name: 'Endoplasmic reticulum', isLabel: true, width: 150.33333333333334, height: 16.0} },
-      { data: { id: '454.0 1340.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'd49ae', parent: 'superparent', name: 'Nucleus', isLabel: true, width: 55.333333333333336, height: 16.0} },
       { data: { id: 'edae8', parent: 'superparent', name: 'NU', isLabel: true, width: 30.0, height: 20.0} },
       { data: { id: 'f40c4', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '419.1568611418463 760.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'adc5d', parent: 'superparent', name: 'Extracellular', isLabel: true, width: 86.33333333333333, height: 16.0} },
-      { data: { id: 'c9f34', parent: 'superparent', name: 'Enzyme Complex', isLabel: true, width: 114.0, height: 20.0} },
-      { data: { id: 'fd2d9', parent: 'superparent', name: 'EC', isLabel: true, width: 22.333333333333332, height: 16.0} },
       { data: { id: '471.0 1222.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '328.0 1160.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'db8f8', parent: 'superparent', name: 'Deubiquitination', isLabel: true, width: 111.0, height: 20.0} },
       { data: { id: '684.6666666666642 686.79862136878', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'fa2f3', parent: 'superparent', name: 'Auto catalysis', isLabel: true, width: 94.0, height: 20.0} },
       { data: { id: '686.9999999999964 752.6593972779065', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '159.0 904.0925589836661', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'd86af', parent: 'superparent', name: '', shape: 'arc', width: 14.907119999999999, height: 20.0} },
-      { data: { id: '629.9999999999969 990.9999999999945', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '628.999999999997 932.6570196866903', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '627.999999999997 686.4652880354461', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '193.5 1420.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'b2469', parent: 'superparent', name: 'Small molecule', isLabel: true, width: 104.0, height: 21.0} },
-      { data: { id: 'ceb8f', parent: 'superparent', name: 'Golgi apparatus', isLabel: true, width: 106.33333333333333, height: 16.0} },
+      { data: { id: '313.0 623.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
       { data: { id: 'aebf8', parent: 'superparent', name: 'Phosphorylation', isLabel: true, width: 111.0, height: 20.0} },
       { data: { id: '473.0 1222.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'd36d1', parent: 'superparent', name: 'Calcineurin', shape: 'ellipse', width: 83.0, height: 30.0} },
       { data: { id: '627.999999999997 603.9999999999964', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'c1495', parent: 'superparent', name: 'Acetylation', isLabel: true, width: 74.0, height: 20.0} },
+      { data: { id: '298.0218329306179 481.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '686.9999999999964 952.6570196866903', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '628.999999999997 852.6582084822985', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '328.3333333333335 1172.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '648.9999999999964 686.4652880354461', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '628.999999999997 772.6593972779065', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'a25b6', parent: 'superparent', name: 'NU', isLabel: true, width: 30.0, height: 20.0} },
-      { data: { id: 'b0f16', parent: 'superparent', name: 'CY', isLabel: true, width: 28.0, height: 20.0} },
-      { data: { id: '628.999999999997 912.6570196866903', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '402.3333333333335 1172.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'f47f3', parent: 'superparent', name: 'NU', isLabel: true, width: 23.333333333333332, height: 16.0} },
       { data: { id: '656.6666666666642 620.79862136878', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '70.43881856540082 533.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '313.0 602.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
-      { data: { id: 'dc6f1', parent: 'superparent', name: '', placementNode: true, anchor: true} },
       { data: { id: '683.4546258735204 1119.8977880629868', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '350.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '313.0 1339.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'ecbcb', parent: 'superparent', name: 'PM', isLabel: true, width: 25.333333333333332, height: 16.0} },
       { data: { id: '193.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '402.0 1160.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '685.9999999999964 645.9999999999961', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '686.9999999999964 892.6570196866903', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'b15ef', parent: 'superparent', name: 'mRNA', isLabel: true, width: 41.0, height: 20.0} },
       { data: { id: 'f28c4', parent: 'superparent', name: 'Proteolytic cleavage', isLabel: true, width: 122.0, height: 20.0} },
-      { data: { id: 'af96c', parent: 'superparent', name: '', placementNode: true, anchor: true} },
+      { data: { id: 'b15ef', parent: 'superparent', name: 'mRNA', isLabel: true, width: 41.0, height: 20.0} },
       { data: { id: '501.0 464.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '246.33333333333348 1138.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'c2e01', parent: 'superparent', name: 'Mitochondrion', isLabel: true, width: 96.33333333333333, height: 16.0} },
       { data: { id: 'f59ad', parent: 'superparent', name: 'MT', isLabel: true, width: 24.333333333333332, height: 16.0} },
-      { data: { id: 'cae70', parent: 'superparent', name: '', shape: 'ellipse', width: 30.0, height: 31.0} },
+      { data: { id: '453.5 760.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
       { data: { id: '269.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '433.0 1222.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '683.4837201898356 1108.0887265873953', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'db738', parent: 'superparent', name: 'Negative regulation of gene expression', isLabel: true, width: 247.0, height: 20.0} },
       { data: { id: '729.4285714285679 546.6666666666631', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'c8ad5', parent: 'superparent', name: 'Protein', isLabel: true, width: 60.0, height: 20.0} },
-      { data: { id: 'd7c1e', parent: 'superparent', name: 'Leads to through unknown mechanism', isLabel: true, width: 243.0, height: 20.0} },
-      { data: { id: '328.3333333333335 1145.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '84.0 1340.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'e41bd', parent: 'superparent', name: 'Receptor', isLabel: true, width: 64.0, height: 20.0} },
       { data: { id: '627.999999999997 645.9999999999961', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '270.0 463.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'a63f3', parent: 'superparent', name: 'CY', isLabel: true, width: 28.0, height: 20.0} },
-      { data: { id: '318.3333333333335 1002.0', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '686.9999999999964 812.6593972779065', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '681.9999999999964 718.9999999999939', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'e2a2c', parent: 'superparent', name: 'CY', isLabel: true, width: 29.0, height: 20.0} },
       { data: { id: '85.43881856540082 1174.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '357.1108193277312 760.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'd4144', parent: 'superparent', name: 'Palmitoylation', isLabel: true, width: 90.0, height: 20.0} },
-      { data: { id: '685.9999999999964 663.9999999999958', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '628.999999999997 792.6593972779065', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '628.999999999997 812.6593972779065', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '628.999999999997 792.6593972779065', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: '686.9999999999964 792.6593972779065', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '687.0000017000161 732.6593972779065', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: '84.93881856540082 1214.0571857092004', parent: 'superparent', name: '', placementNode: true, elbow: true} },
       { data: { id: 'd9081', parent: 'superparent', name: 'Ca2+', shape: 'ellipse', width: 45.0, height: 25.0} },
       { data: { id: '628.999999999997 892.6570196866903', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'c3487', parent: 'superparent', name: 'Induced activation', isLabel: true, width: 142.8571428571425, height: 29.52380952380917} },
       { data: { id: '70.12095639943743 464.8438818565401', parent: 'superparent', name: '', placementNode: true} },
-      { data: { id: 'eac5c', parent: 'superparent', name: 'Sumoylation', isLabel: true, width: 86.0, height: 20.0} },
       { data: { id: 'a300f', parent: 'superparent', name: 'Inhibition', isLabel: true, width: 66.0, height: 20.0} },
-      { data: { id: '626.6666666666642 625.79862136878', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'eac5c', parent: 'superparent', name: 'Sumoylation', isLabel: true, width: 86.0, height: 20.0} },
       { data: { id: '627.999999999997 663.9999999999958', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '463.0 426.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: 'd17f1', parent: 'superparent', name: 'Induced catalysis', isLabel: true, width: 111.0, height: 20.0} },
+      { data: { id: 'b9e2c', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '686.9999999999964 912.6570196866903', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'b7ab7', parent: 'superparent', name: 'Protein', isLabel: true, width: 60.0, height: 20.0} },
+      { data: { id: '313.41666666666674 760.4355716878403', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '110.93881856540082 426.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '246.33333333333348 1152.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '686.9999999999964 872.5024647292369', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ae15d', parent: 'superparent', name: 'RANKL/RANK Signaling Pathway', isLabel: true, width: 341.0, height: 28.0} },
+      { data: { id: '386.59663865546224 760.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: 'cd647', parent: 'superparent', name: 'Dephosphorylation', isLabel: true, width: 127.0, height: 20.0} },
+      { data: { id: 'a2df1', parent: 'superparent', name: 'ROS', isMetabolite: true, width: 50.0, height: 20.0} },
+      { data: { id: '228.0 1340.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '124.0 1342.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '217.0 464.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '686.9999999999964 832.5036535248448', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '693.9999999999964 970.9999999999945', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '162.0 914.0925589836661', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '246.33333333333348 1174.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '85.43881856540082 1147.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'f45b0', parent: 'superparent', name: 'NU', isLabel: true, width: 30.0, height: 20.0} },
+      { data: { id: '314.0 593.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '683.4546258735204 1099.0266446873065', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'a76aa', parent: 'superparent', name: 'NU', isLabel: true, width: 30.0, height: 20.0} },
+      { data: { id: 'fab40', parent: 'superparent', name: 'Translocation', isLabel: true, width: 92.0, height: 20.0} },
+      { data: { id: '628.999999999997 871.9999999999945', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '686.9999999999964 932.6570196866903', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '161.2442549337761 426.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '386.0 1339.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '313.0 866.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ea726', parent: 'superparent', name: 'Protein', isLabel: true, width: 60.0, height: 20.0} },
+      { data: { id: '453.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'dfdd1', parent: 'superparent', name: 'Transport', isLabel: true, width: 66.0, height: 20.0} },
+      { data: { id: 'a456b', parent: 'superparent', name: 'Methylation', isLabel: true, width: 75.0, height: 20.0} },
+      { data: { id: 'a74cc', parent: 'superparent', name: '', shape: 'arc', width: 15.678381338062, height: 31.733599350666836} },
+      { data: { id: 'a204f', parent: 'superparent', name: 'Positive regulation of gene expression', isLabel: true, width: 247.0, height: 20.0} },
+      { data: { id: '84.0 1341.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '362.5 623.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '687.9999999999964 991.5012759336287', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'f6c2c', parent: 'superparent', name: 'Endosome', isLabel: true, width: 71.33333333333333, height: 16.0} },
+      { data: { id: '85.0 1136.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '433.0 1223.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '157.0 1339.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '628.999999999997 731.9999999999945', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '685.9999999999964 603.9999999999964', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '204.40336134453776 687.0420168067227', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '263.93434873949604 760.4355716878403', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '70.12095639943743 464.25035161744023', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'a4ef9', parent: 'superparent', name: 'Osteoclastogenesis', isLabel: true, width: 120.1382886776144, height: 27.657735522903913} },
+      { data: { id: '683.4837201898356 1133.0887265873953', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ed5af', parent: 'superparent', name: 'Demethylation', isLabel: true, width: 93.0, height: 20.0} },
+      { data: { id: '685.6666666666642 625.79862136878', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '501.0 1130.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '402.3333333333335 1145.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '430.0 465.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '454.0 1340.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'd49ae', parent: 'superparent', name: 'Nucleus', isLabel: true, width: 55.333333333333336, height: 16.0} },
+      { data: { id: 'c9f34', parent: 'superparent', name: 'Enzyme Complex', isLabel: true, width: 114.0, height: 20.0} },
+      { data: { id: 'fd2d9', parent: 'superparent', name: 'EC', isLabel: true, width: 22.333333333333332, height: 16.0} },
+      { data: { id: '328.0 1160.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'fa2f3', parent: 'superparent', name: 'Auto catalysis', isLabel: true, width: 94.0, height: 20.0} },
+      { data: { id: '159.0 904.0925589836661', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'd86af', parent: 'superparent', name: '', shape: 'arc', width: 14.907119999999999, height: 20.0} },
+      { data: { id: '344.75 623.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '629.9999999999969 990.9999999999945', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '628.999999999997 932.6570196866903', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '193.5 1420.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ceb8f', parent: 'superparent', name: 'Golgi apparatus', isLabel: true, width: 106.33333333333333, height: 16.0} },
+      { data: { id: 'd36d1', parent: 'superparent', name: 'Calcineurin', shape: 'ellipse', width: 83.0, height: 30.0} },
+      { data: { id: '313.5436658612358 481.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '328.3333333333335 1172.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '648.9999999999964 686.4652880354461', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'a25b6', parent: 'superparent', name: 'NU', isLabel: true, width: 30.0, height: 20.0} },
+      { data: { id: 'b0f16', parent: 'superparent', name: 'CY', isLabel: true, width: 28.0, height: 20.0} },
+      { data: { id: '155.5 426.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: 'f47f3', parent: 'superparent', name: 'NU', isLabel: true, width: 23.333333333333332, height: 16.0} },
+      { data: { id: '402.3333333333335 1172.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '628.999999999997 912.6570196866903', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '313.0 602.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '70.43881856540082 533.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'dc6f1', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'ecbcb', parent: 'superparent', name: 'PM', isLabel: true, width: 25.333333333333332, height: 16.0} },
+      { data: { id: '313.0 1339.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '402.0 1160.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '136.09153674958844 426.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '686.9999999999964 892.6570196866903', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '344.0 481.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: 'af96c', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'cae70', parent: 'superparent', name: '', shape: 'ellipse', width: 30.0, height: 31.0} },
+      { data: { id: '433.0 1222.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'db738', parent: 'superparent', name: 'Negative regulation of gene expression', isLabel: true, width: 247.0, height: 20.0} },
+      { data: { id: '384.81372228369264 760.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: 'c8ad5', parent: 'superparent', name: 'Protein', isLabel: true, width: 60.0, height: 20.0} },
+      { data: { id: 'd7c1e', parent: 'superparent', name: 'Leads to through unknown mechanism', isLabel: true, width: 243.0, height: 20.0} },
+      { data: { id: '228.66036414565866 760.4355716878403', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '328.3333333333335 1145.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'e41bd', parent: 'superparent', name: 'Receptor', isLabel: true, width: 64.0, height: 20.0} },
+      { data: { id: '282.5 481.0', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '318.3333333333335 1002.0', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '686.9999999999964 812.6593972779065', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: 'e2a2c', parent: 'superparent', name: 'CY', isLabel: true, width: 29.0, height: 20.0} },
+      { data: { id: '681.9999999999964 718.9999999999939', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '685.9999999999964 663.9999999999958', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '687.0000017000161 732.6593972779065', parent: 'superparent', name: '', placementNode: true} },
+      { data: { id: '84.93881856540082 1214.0571857092004', parent: 'superparent', name: '', placementNode: true, elbow: true} },
+      { data: { id: '626.6666666666642 625.79862136878', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'bf37b', parent: 'superparent', name: 'ER', isLabel: true, width: 22.333333333333332, height: 16.0} },
       { data: { id: '85.43881856540082 1162.0', parent: 'superparent', name: '', placementNode: true} },
       { data: { id: 'c8b5d', parent: 'superparent', name: 'GO', isLabel: true, width: 25.333333333333332, height: 16.0} }
     ],
     edges: [
-      { data: { source: '454.0 1340.0', target: 'a9022', noArrowHead: true } },
-      { data: { source: '501.0 464.0', target: '70.12095639943743 464.8438818565401', noArrowHead: true } },
-      { data: { source: '270.0 463.0', target: 'd3f0c', noArrowHead: true } },
+      { data: { source: 'a9022', target: '454.0 1340.0', noArrowHead: true } },
+      { data: { source: '70.12095639943743 464.8438818565401', target: '501.0 464.0', noArrowHead: true } },
+      { data: { source: 'd3f0c', target: '270.0 463.0', noArrowHead: true } },
       { data: { source: 'd144d', target: '314.0 593.0', label: 'TBar', teeArrowHead: true, color: 'red' } },
-      { data: { source: '318.3333333333335 1002.0', target: '307.0 1002.0', noArrowHead: true } },
+      { data: { source: '307.0 1002.0', target: '318.3333333333335 1002.0', noArrowHead: true } },
       { data: { source: 'db4d9', target: 'a2df1', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '189.0 465.0', target: 'fe456', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '159.0 904.0925589836661', target: '162.0 914.0925589836661', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: '84.0 1340.0', target: 'dd262', noArrowHead: true } },
-      { data: { source: '453.0 1220.0', target: 'd5368', noArrowHead: true } },
+      { data: { source: 'dd262', target: '84.0 1340.0', noArrowHead: true } },
+      { data: { source: 'd5368', target: '453.0 1220.0', noArrowHead: true } },
       { data: { source: 'e6197', target: '376.5 316.0', noArrowHead: true, haystackStyle: true } },
       { data: { source: '376.5 316.0', target: 'ad383', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: 'd3f0c', target: 'd1a43', noArrowHead: true, haystackStyle: true } },
-      { data: { source: 'd1a43', target: 'a6f66', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: 'd1a43', target: 'e4464', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: 'dcb34', target: 'dc6f1', noArrowHead: true, haystackStyle: true } },
-      { data: { source: 'dc6f1', target: 'dfe71', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'd3f0c', target: '155.5 426.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '155.5 426.0', target: 'a6f66', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'd1a43', target: '161.2442549337761 426.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '161.2442549337761 426.0', target: '136.09153674958844 426.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '136.09153674958844 426.0', target: '110.93881856540082 426.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '110.93881856540082 426.0', target: 'e4464', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'dcb34', target: '463.0 426.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '463.0 426.0', target: 'dfe71', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
       { data: { source: 'dc6f1', target: '399.5 426.0', noArrowHead: true, haystackStyle: true } },
       { data: { source: '399.5 426.0', target: 'daee4', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
       { data: { source: 'b6d5d', target: '313.0 602.0', noArrowHead: true, haystackStyle: true } },
       { data: { source: '313.0 602.0', target: 'ebc51', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
       { data: { source: 'e63c5', target: '84.93881856540082 1214.0571857092004', noArrowHead: true, haystackStyle: true } },
       { data: { source: '84.93881856540082 1214.0571857092004', target: 'dd262', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: 'd68bf', target: 'f15f7', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: '357.1108193277312 760.0', target: 'd68bf', noArrowHead: true, haystackStyle: true } },
-      { data: { source: 'd68bf', target: 'adf7a', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: 'b9e2c', target: 'c9c26', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'd68bf', target: '313.41666666666674 760.4355716878403', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '313.41666666666674 760.4355716878403', target: '263.93434873949604 760.4355716878403', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '263.93434873949604 760.4355716878403', target: '228.66036414565866 760.4355716878403', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '228.66036414565866 760.4355716878403', target: 'f15f7', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'd68bf', target: '313.41666666666674 760.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '313.41666666666674 760.0', target: '357.1108193277312 760.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '357.1108193277312 760.0', target: '386.59663865546224 760.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '386.59663865546224 760.0', target: 'adf7a', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'b9e2c', target: '384.81372228369264 760.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '384.81372228369264 760.0', target: '419.1568611418463 760.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '419.1568611418463 760.0', target: '453.5 760.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '453.5 760.0', target: 'c9c26', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
       { data: { source: 'e63c5', target: 'd7113', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: 'd144d', target: 'ebc51', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: 'f40c4', target: 'af96c', noArrowHead: true, haystackStyle: true } },
-      { data: { source: 'af96c', target: 'f71b6', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
-      { data: { source: 'af96c', target: 'e2e87', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'd144d', target: '362.5 623.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '362.5 623.0', target: '344.75 623.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '344.75 623.0', target: '313.0 623.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '313.0 623.0', target: 'ebc51', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'f40c4', target: '344.0 481.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '344.0 481.0', target: 'f71b6', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
+      { data: { source: 'af96c', target: '313.5436658612358 481.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '313.5436658612358 481.0', target: '298.0218329306179 481.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '298.0218329306179 481.0', target: '282.5 481.0', noArrowHead: true, haystackStyle: true } },
+      { data: { source: '282.5 481.0', target: 'e2e87', label: 'Arrow', triangleArrowHead: true, haystackStyle: true } },
       { data: { source: 'e6197', target: 'b2cd5', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: 'dcb34', target: 'f40c4', noArrowHead: true } },
-      { data: { source: 'f40c4', target: 'ebc51', label: 'Arrow', triangleArrowHead: true } },
+      { data: { source: 'dcb34', target: 'ebc51', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'c9c26', target: 'ec581', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '430.0 465.0', target: 'b86c8', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '217.0 464.0', target: 'dc008', label: 'Arrow', triangleArrowHead: true } },
@@ -931,26 +987,26 @@ elements: {
       { data: { source: 'fb220', target: 'ebc51', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '473.0 1222.0', target: 'a9022', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '193.0 1341.0', target: '193.5 1420.0', label: 'translation', triangleArrowHead: true } },
-      { data: { source: '84.0 1341.0', target: '453.0 1341.0', noArrowHead: true } },
-      { data: { source: '313.0 1339.0', target: 'c642d', noArrowHead: true } },
-      { data: { source: '228.0 1340.0', target: 'd7113', noArrowHead: true } },
+      { data: { source: '453.0 1341.0', target: '84.0 1341.0', noArrowHead: true } },
+      { data: { source: 'c642d', target: '313.0 1339.0', noArrowHead: true } },
+      { data: { source: 'd7113', target: '228.0 1340.0', noArrowHead: true } },
       { data: { source: '269.0 1341.0', target: 'ab90e', label: 'translation', triangleArrowHead: true } },
       { data: { source: '417.0 1341.0', target: 'c48cf', label: 'translation', triangleArrowHead: true } },
       { data: { source: '124.0 1342.0', target: 'd9b82', label: 'translation', triangleArrowHead: true } },
       { data: { source: '350.0 1341.0', target: 'd2f82', label: 'translation', triangleArrowHead: true } },
       { data: { source: '433.0 1223.0', target: 'cb7c6', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: '433.0 1222.0', target: '471.0 1222.0', noArrowHead: true } },
-      { data: { source: '157.0 1339.0', target: 'a1f36', noArrowHead: true } },
+      { data: { source: '471.0 1222.0', target: '433.0 1222.0', noArrowHead: true } },
+      { data: { source: 'a1f36', target: '157.0 1339.0', noArrowHead: true } },
       { data: { source: 'adf7a', target: 'd5638', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: 'fca4e', target: 'cd3ac', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '402.3333333333335 1145.0', target: '402.3333333333335 1172.0', label: 'conversion', triangleArrowHead: true } },
       { data: { source: '402.0 1160.0', target: 'b0f16', label: 'conversion', triangleArrowHead: true } },
-      { data: { source: '386.0 1339.0', target: 'ee8db', noArrowHead: true } },
+      { data: { source: 'ee8db', target: '386.0 1339.0', noArrowHead: true } },
       { data: { source: 'e186a', target: '501.0 1130.0', label: 'TBar', teeArrowHead: true, color: 'red' } },
       { data: { source: 'dd262', target: 'a1f36', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '627.999999999997 686.4652880354461', target: '648.9999999999964 686.4652880354461', label: 'TBar', teeArrowHead: true, color: 'red' } },
       { data: { source: '626.6666666666642 625.79862136878', target: '685.6666666666642 625.79862136878', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: '656.6666666666642 620.79862136878', target: '656.6666666666642 630.79862136878', noArrowHead: true } },
+      { data: { source: '656.6666666666642 630.79862136878', target: '656.6666666666642 620.79862136878', noArrowHead: true } },
       { data: { source: '628.999999999997 970.9999999999945', target: '693.9999999999964 970.9999999999945', label: 'inhibition', teeArrowHead: true, color: 'red' } },
       { data: { source: '628.999999999997 871.9999999999945', target: '686.9999999999964 872.5024647292369', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '628.999999999997 852.6582084822985', target: '686.9999999999964 852.6582084822985', label: 'Arrow', triangleArrowHead: true } },
@@ -958,7 +1014,7 @@ elements: {
       { data: { source: '629.9999999999969 990.9999999999945', target: '687.9999999999964 991.5012759336287', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '628.999999999997 792.6593972779065', target: '686.9999999999964 792.6593972779065', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '628.999999999997 731.9999999999945', target: '687.0000017000161 732.6593972779065', label: 'Arrow', triangleArrowHead: true } },
-      { data: { source: '729.4285714285679 546.6666666666631', target: 'd8839', noArrowHead: true } },
+      { data: { source: 'd8839', target: '729.4285714285679 546.6666666666631', noArrowHead: true } },
       { data: { source: '628.999999999997 772.6593972779065', target: '686.9999999999964 772.6593972779065', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '628.999999999997 752.6593972779065', target: '686.9999999999964 752.6593972779065', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '627.999999999997 831.9999999999945', target: '686.9999999999964 832.5036535248448', label: 'Arrow', triangleArrowHead: true } },
@@ -973,7 +1029,7 @@ elements: {
       { data: { source: '675.3333333333298 712.3333333333275', target: '681.9999999999964 718.9999999999939', label: 'Arrow', triangleArrowHead: true } },
       { data: { source: '683.4837201898356 1108.0887265873953', target: '683.4837201898356 1133.0887265873953', label: 'conversion', triangleArrowHead: true } },
       { data: { source: '683.4546258735204 1119.8977880629868', target: '683.4546258735204 1099.0266446873065', label: 'conversion', triangleArrowHead: true } },
-      { data: { source: 'cae70', target: 'a2ed1', noArrowHead: true } }
+      { data: { source: 'a2ed1', target: 'cae70', noArrowHead: true } }
     ]
   },
   
